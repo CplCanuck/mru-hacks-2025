@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b0g05sv23vr6u"]
+[gd_scene load_steps=37 format=3 uid="uid://b0g05sv23vr6u"]
 
 [ext_resource type="Script" uid="uid://dybfiyquachh8" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dpoluq7707dbk" path="res://Assets/placeholderWitch-Sheet.png" id="2_cvnsp"]
@@ -164,6 +164,10 @@ _data = {
 &"RunUp": SubResource("Animation_x3wgy")
 }
 
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_6t5aa"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vgqql"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pu2lt"]
 animation = &"IdleDown"
 
@@ -215,20 +219,48 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vgqql"]
 advance_mode = 2
-advance_condition = &"run"
+advance_expression = "velocity"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fkybt"]
 advance_mode = 2
-advance_condition = &"idle"
+advance_expression = "!velocity"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x3wgy"]
+advance_mode = 2
+advance_expression = "attacking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3smsa"]
+advance_mode = 2
+advance_expression = "attacking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8erm5"]
+advance_mode = 2
+advance_expression = "dashing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f1ek2"]
+advance_mode = 2
+advance_expression = "dashing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tx1dd"]
+advance_mode = 2
+advance_expression = "dashing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gymyn"]
+advance_mode = 2
+advance_expression = "!dashing"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fd4e3"]
+states/Attack/node = SubResource("AnimationNodeBlendSpace2D_6t5aa")
+states/Attack/position = Vector2(1552.5267, 77.56955)
+states/Dash/node = SubResource("AnimationNodeBlendSpace2D_vgqql")
+states/Dash/position = Vector2(1553.166, 245.99387)
 states/End/position = Vector2(1851.3334, 144.54869)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_cvnsp")
-states/Idle/position = Vector2(1370.6666, 145.14944)
+states/Idle/position = Vector2(1364.6666, 246.38315)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_3smsa")
-states/Run/position = Vector2(1560.1482, 144.51414)
-states/Start/position = Vector2(1197.3334, 142.46364)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6t5aa"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_vgqql"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_fkybt")]
+states/Run/position = Vector2(1364.7572, 77.43997)
+states/Start/position = Vector2(1174.6667, 246.7897)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6t5aa"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_vgqql"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_fkybt"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_x3wgy"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_3smsa"), "Attack", "Dash", SubResource("AnimationNodeStateMachineTransition_8erm5"), "Run", "Dash", SubResource("AnimationNodeStateMachineTransition_f1ek2"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_tx1dd"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_gymyn")]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
@@ -240,7 +272,7 @@ shape = SubResource("CapsuleShape2D_onrkg")
 texture_filter = 1
 scale = Vector2(3, 4.5)
 texture = ExtResource("2_cvnsp")
-hframes = 12
+hframes = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -249,9 +281,10 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fd4e3")
+advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/idle = false
-parameters/conditions/run = false
+parameters/Attack/blend_position = Vector2(0, 0)
+parameters/Dash/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Run/blend_position = Vector2(0, 0)
 
