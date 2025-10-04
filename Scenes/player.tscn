@@ -335,6 +335,9 @@ states/Run/position = Vector2(1364.7572, 77.43997)
 states/Start/position = Vector2(1174.6667, 246.7897)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6t5aa"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_vgqql"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_fkybt"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_x3wgy"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_3smsa"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_pu2lt")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(50, 48)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
 
@@ -342,6 +345,7 @@ script = ExtResource("1_cvnsp")
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+<<<<<<< HEAD
 texture_filter = 1
 scale = Vector2(3, 4.5)
 texture = ExtResource("2_cvnsp")
@@ -363,3 +367,14 @@ parameters/Run/blend_position = Vector2(0, 0)
 [node name="PlayerAnimation" type="Node2D" parent="." node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("3_6t5aa")
 animation_tree = NodePath("../AnimationTree")
+=======
+position = Vector2(-9.536743e-07, -2.3841858e-07)
+scale = Vector2(0.15624999, 0.23437497)
+texture = ExtResource("2_6t5aa")
+
+[node name="InteractionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_cvnsp")
+>>>>>>> ea70ef4a15ba48bb09e35dfd21a39eaede1257a8

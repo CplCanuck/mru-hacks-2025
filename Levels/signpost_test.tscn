@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://crl3jjciruy0f"]
+
+[ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="1_63esv"]
+[ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="2_g7rae"]
+
+[node name="SignpostTest" type="Node2D"]
+
+[node name="Gravestone" parent="." instance=ExtResource("1_63esv")]
+position = Vector2(442, 150)
+text = "lorem ipsum dolor est"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource("2_g7rae")]
