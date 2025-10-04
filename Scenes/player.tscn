@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=43 format=3 uid="uid://b0g05sv23vr6u"]
+=======
+[gd_scene load_steps=42 format=3 uid="uid://b0g05sv23vr6u"]
+>>>>>>> d1c8cdd922f16bc3e7a1644492f22ec1005acc7a
 
 [ext_resource type="Script" uid="uid://dybfiyquachh8" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dpoluq7707dbk" path="res://Assets/placeholderWitch-Sheet.png" id="2_cvnsp"]
-[ext_resource type="Script" uid="uid://dqlnduv0t376g" path="res://Scenes/player_animation_tree.gd" id="3_6t5aa"]
+[ext_resource type="Script" path="res://Scenes/player_animation_tree.gd" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 17.0
@@ -366,6 +370,8 @@ height = 94.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
 radius = 33.0
 height = 68.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
+size = Vector2(150, 150)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
@@ -414,3 +420,8 @@ disabled = true
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_vgqql")
 disabled = true
+[node name="InteractionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
+position = Vector2(0, 75)
+shape = SubResource("RectangleShape2D_6t5aa")
