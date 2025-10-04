@@ -3,6 +3,7 @@ class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const DASH_LENGTH = 100
 
 var attacking := false
 var dashing := false
@@ -15,7 +16,7 @@ func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down").normalized()
 	if direction:
 		velocity = direction * SPEED
-		
+
 		# move interaction range node
 		match direction : 
 			Vector2.LEFT:
@@ -36,9 +37,13 @@ func _physics_process(_delta: float) -> void:
 		attacking = true
 	else:
 		attacking = false
+			
+	# Dash
+	if Input.is_action_just_pressed("dash"):
+		pass
 
 	move_and_slide()
-	
+
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('ui_select'):
