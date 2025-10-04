@@ -12,4 +12,3 @@ text = "lorem ipsum dolor est"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource("2_g7rae")]
-visible = false

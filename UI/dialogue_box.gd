@@ -14,6 +14,7 @@ func _ready():
 
 func change_text(text:String) :
 	# hides on double interact
+	# also stops empty signs from showing anything.
 	if text == text_box.text :
 		visible = false
 		text_box.text = ""
