@@ -11,11 +11,11 @@ var dashing := false
 @onready var interaction_range: Area2D = $InteractionRange
 
 func _physics_process(_delta: float) -> void:
-    # Get the input direction and handle the movement/deceleration.
-    # As good practice, you should replace UI actions with custom gameplay actions.
-    var direction := Input.get_vector("left", "right", "up", "down").normalized()
-    if direction:
-        velocity = direction * SPEED
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_vector("left", "right", "up", "down").normalized()
+	if direction:
+		velocity = direction * SPEED
 
 		# move interaction range node
 		match direction : 
@@ -27,20 +27,20 @@ func _physics_process(_delta: float) -> void:
 				interaction_range.rotation_degrees = 180
 			Vector2.DOWN:
 				interaction_range.rotation_degrees = 0
-    else:
-        # Slow down player if not moving
-        velocity.x = move_toward(velocity.x, 0, SPEED)
-        velocity.y = move_toward(velocity.y, 0, SPEED)
-        
-    # Attacking
-    if Input.is_action_pressed("attack"): # Change to is_action_just_pressed for implimented attack
-        attacking = true
-    else:
-        attacking = false
-        
-    # Dash
-    if Input.is_action_just_pressed("dash"):
-        pass
+	else:
+		# Slow down player if not moving
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+		
+	# Attacking
+	if Input.is_action_pressed("attack"): # Change to is_action_just_pressed for implimented attack
+		attacking = true
+	else:
+		attacking = false
+			
+	# Dash
+	if Input.is_action_just_pressed("dash"):
+		pass
 
 	move_and_slide()
 
