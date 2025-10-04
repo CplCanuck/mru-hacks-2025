@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://byjmdu6hnqlpd"]
+[gd_scene load_steps=6 format=3 uid="uid://byjmdu6hnqlpd"]
 
+[ext_resource type="Script" uid="uid://c26lqfbdckgon" path="res://Elements/gravestone.gd" id="1_7ua5i"]
 [ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="1_loovt"]
 [ext_resource type="Texture2D" uid="uid://ntj3glpu218v" path="res://icon.svg" id="2_7ua5i"]
 
@@ -10,6 +11,7 @@ size = Vector2(195, 110)
 size = Vector2(100, 100)
 
 [node name="Gravestone" type="StaticBody2D"]
+script = ExtResource("1_7ua5i")
 
 [node name="SignpostComponent" parent="." instance=ExtResource("1_loovt")]
 

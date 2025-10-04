@@ -1,21 +1,25 @@
 extends Control
 
 
-@onready var text_box: RichTextLabel = $VBoxContainer/Text
+@onready var text_box: RichTextLabel = $VBoxContainer/PanelContainer/Text
 
 
 func _ready():
 	# TODO : forget how to connect to signals
 	for signpost : Signpost in get_tree().get_nodes_in_group("Signposts"):
-		signpost.connect("change_dialogue_box", change_text)
-		signpost.connect("close_dialogue_box", close)
+		signpost.change_dialogue_box.connect(change_text)
+#		signpost.close_dialogue_box.connect(close)
 	pass
 	 
 
 func change_text(text:String) :
-	visible = true
-	text_box.text = text
-	return
+	# hides on double interact
+	if text == text_box.text :
+		visible = false
+		text_box.text = ""
+	else :
+		visible = true
+		text_box.text = text
 
 func close():
 	visible = false
