@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://143h4hrvonoa"]
+
+[ext_resource type="Script" uid="uid://dlmpcr8sm6eqn" path="res://Components/signpost_component.gd" id="1_v2sbv"]
+
+[node name="SignpostComponent" type="Area2D"]
+script = ExtResource("1_v2sbv")
