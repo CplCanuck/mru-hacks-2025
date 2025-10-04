@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://m50tlqmjxlga"]
+
+[ext_resource type="Script" uid="uid://cmhqosuiq1pka" path="res://Enemies/enemy_chain.gd" id="1_w1ygi"]
+
+[node name="EnemyChain" type="Node2D"]
+script = ExtResource("1_w1ygi")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0.3764706, 1, 0.39215687, 1)

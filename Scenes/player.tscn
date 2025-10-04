@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dybfiyquachh8" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dpoluq7707dbk" path="res://Assets/placeholderWitch-Sheet.png" id="2_cvnsp"]
-[ext_resource type="Script" uid="uid://dqlnduv0t376g" path="res://Scenes/player_animation_tree.gd" id="3_6t5aa"]
+[ext_resource type="Script" path="res://Scenes/player_animation_tree.gd" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 17.0
