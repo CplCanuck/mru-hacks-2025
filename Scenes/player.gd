@@ -17,5 +17,11 @@ func _physics_process(_delta: float) -> void:
         # Slow down player if not moving
         velocity.x = move_toward(velocity.x, 0, SPEED)
         velocity.y = move_toward(velocity.y, 0, SPEED)
+        
+    # Attacking
+    if Input.is_action_pressed("attack"): # Change to is_action_just_pressed for implimented attack
+        attacking = true
+    else:
+        attacking = false
 
     move_and_slide()
