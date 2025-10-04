@@ -24,12 +24,12 @@ func _physics_process(_delta: float) -> void:
     else:
         attacking = false
 
-	move_and_slide()
-	
-	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('ui_select'):
-		for object in interaction_range.get_overlapping_areas():
-			if object.has_method("interact"):
-				object.interact()
-		
+    move_and_slide()
+    
+    
+#func _input(event: InputEvent) -> void:
+#    if event.is_action_pressed('ui_select'):
+#        for object in interaction_range.get_overlapping_areas():
+#            if object.has_method("interact"):
+#                object.interact()
+        
