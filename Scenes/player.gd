@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const DASH_LENGTH = 100
 
 var attacking := false
 var dashing := false
@@ -23,6 +24,10 @@ func _physics_process(_delta: float) -> void:
         attacking = true
     else:
         attacking = false
+        
+    # Dash
+    if Input.is_action_just_pressed("dash"):
+        pass
 
     move_and_slide()
     
