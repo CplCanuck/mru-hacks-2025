@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=4 uid="uid://blaxwanqxgxev"]
+[gd_scene load_steps=6 format=4 uid="uid://blaxwanqxgxev"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_wi846"]
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_pvy0h"]
 [ext_resource type="Texture2D" uid="uid://ccv44ilecbocj" path="res://Assets/GrassBase.png" id="3_pvy0h"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="4_om7uc"]
+[ext_resource type="Texture2D" uid="uid://ntj3glpu218v" path="res://icon.svg" id="5_cph7v"]
 
 [node name="LevelOne" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_wi846")]
+position = Vector2(230, 435)
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_pvy0h")]
 player = NodePath("../Player")
@@ -110,3 +112,20 @@ position = Vector2(738.00006, 187.00003)
 rotation = 1.0471976
 scale = Vector2(9.596025, 3.1171832)
 texture = ExtResource("3_pvy0h")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies"]
+position = Vector2(755, 549)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_cph7v")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Enemies"]
+position = Vector2(749, 284)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_cph7v")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Enemies"]
+position = Vector2(648, 435)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_cph7v")
