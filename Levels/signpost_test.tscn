@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crl3jjciruy0f"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="1_63esv"]
-[ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="1_d34mx"]
+[ext_resource type="PackedScene" path="res://Scenes/camera.tscn" id="1_d34mx"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="2_g7rae"]
 [ext_resource type="PackedScene" uid="uid://b0g05sv23vr6u" path="res://Scenes/player.tscn" id="4_p3o5h"]
 
@@ -13,7 +13,11 @@ position = Vector2(577, 324)
 [node name="Gravestone" parent="." instance=ExtResource("1_63esv")]
 position = Vector2(442, 150)
 level = 2
-text = "lorem ipsum dolor est \\n go to level one??"
+text = "
+
+Billy Bob Junior
+1253 - 1261
+*Confirm to go to level one*"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

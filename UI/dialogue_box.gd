@@ -14,21 +14,25 @@ func _ready():
 	pass
 	 
 
-func change_text(text:String, time:int) :
+func change_text(text:String, time:int, centered:bool) :
 	# hides on double interact
 	# also stops empty signs from showing anything.
 	if text == text_box.text :
 		visible = false
 		text_box.text = ""
+		text_box.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	else :
 		visible = true
 		text_box.text = text
+		if centered :
+			text_box.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		timer.start(time)
 
 func clear_text(text):
 	if text == text_box.text :
 		visible = false
 		text_box.text = ""
+		text_box.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 
 func _on_timer_timeout() -> void:

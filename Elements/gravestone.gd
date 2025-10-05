@@ -13,7 +13,7 @@ enum levels {
 
 @export var level : levels = levels.NONE
 
-@export var text : String = "":
+@export_multiline var text : String = "":
 	set(val) :
 		text = val
 		if signpost_component :
@@ -22,5 +22,6 @@ enum levels {
 func _ready():
 	# triggers set
 	text = text
+	signpost_component.centered = true
 	
 	

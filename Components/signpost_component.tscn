@@ -6,3 +6,5 @@
 script = ExtResource("1_v2sbv")
 
 [node name="IgnoreRange" type="Area2D" parent="."]
+
+[connection signal="body_exited" from="IgnoreRange" to="." method="_on_ignore_range_body_exited"]

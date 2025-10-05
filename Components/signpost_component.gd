@@ -3,6 +3,7 @@ class_name Signpost
 
 @export var text:String  = ""
 @export var time:int = 5
+@export var centered:bool = false
 
 var dialogue_box : Control
 
@@ -16,7 +17,7 @@ func interact():
 	if get_parent() is Gravestone :
 		if dialogue_box and dialogue_box.text == text:
 			GameManager.change_level(get_parent().level)
-	change_dialogue_box.emit(text, time)
+	change_dialogue_box.emit(text, time, centered)
 
 
 ## Clears text when the player leaves the nearby area
