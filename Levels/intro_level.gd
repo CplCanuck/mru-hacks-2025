@@ -18,13 +18,8 @@ func _process(delta):
 func _on_fade_to_black_block_body_entered(body):
 	print("Something hits box")
 	if body is Player and setup:
-		setup = false
-		print("Player hits box")
-		var tween = Tween.new()
-		tween.tween_property($CanvasLayer/ColorRect, "modulate", Color(0,0,0,1), 3.0)
-		await tween.finished
-		var tween2 = Tween.new()
-		tween2.tween_property($CanvasLayer/Container/Label, "modulate", Color(1,0,0,1), 3.0)
-		await tween2.finished
-		GameManager.change_level(GameManager.levels.HUB)
+		$AnimationPlayer.play("change")
+		
 	pass # Replace with function body.
+func next_scene():
+	GameManager.change_level(GameManager.levels.HUB)
