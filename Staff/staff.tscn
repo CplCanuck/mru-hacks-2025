@@ -25,10 +25,11 @@ height = 128.0
 script = ExtResource("1_qwret")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, -10)
 texture = ExtResource("1_l4ah5")
 
 [node name="chainbase" type="StaticBody2D" parent="."]
-position = Vector2(23, -5)
+position = Vector2(37, -15)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -42,7 +43,7 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="chainhook" type="StaticBody2D" parent="."]
-position = Vector2(12, -18)
+position = Vector2(26, -28)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -53,17 +54,17 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJointHOOK" type="PinJoint2D" parent="."]
-position = Vector2(12, -16)
+position = Vector2(26, -26)
 node_a = NodePath("../chainhook")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(23, -2)
+position = Vector2(37, -12)
 node_a = NodePath("../chainbase")
 node_b = NodePath("../chainlink")
 bias = 0.339
 
 [node name="chainlink" type="RigidBody2D" parent="."]
-position = Vector2(23, 0)
+position = Vector2(37, -10)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -79,12 +80,12 @@ texture = ExtResource("3_uglyn")
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
-position = Vector2(23, 3)
+position = Vector2(37, -7)
 node_a = NodePath("../chainlink")
 node_b = NodePath("../chainlink2")
 
 [node name="chainlink2" type="RigidBody2D" parent="."]
-position = Vector2(23, 6)
+position = Vector2(37, -4)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -98,12 +99,12 @@ texture = ExtResource("2_uglyn")
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D3" type="PinJoint2D" parent="."]
-position = Vector2(23, 9)
+position = Vector2(37, -1)
 node_a = NodePath("../chainlink2")
 node_b = NodePath("../chainlink3")
 
 [node name="chainlink3" type="RigidBody2D" parent="."]
-position = Vector2(23, 11)
+position = Vector2(37, 1)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -119,12 +120,12 @@ position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D4" type="PinJoint2D" parent="."]
-position = Vector2(23, 15)
+position = Vector2(37, 5)
 node_a = NodePath("../chainlink3")
 node_b = NodePath("../chainlink4")
 
 [node name="chainlink4" type="RigidBody2D" parent="."]
-position = Vector2(23, 17)
+position = Vector2(37, 7)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -140,12 +141,12 @@ position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D5" type="PinJoint2D" parent="."]
-position = Vector2(23, 20)
+position = Vector2(37, 10)
 node_a = NodePath("../chainlink4")
 node_b = NodePath("../chainlink5")
 
 [node name="chainlink5" type="RigidBody2D" parent="."]
-position = Vector2(23, 22)
+position = Vector2(37, 12)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -162,12 +163,12 @@ position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D6" type="PinJoint2D" parent="."]
-position = Vector2(23, 25)
+position = Vector2(37, 15)
 node_a = NodePath("../chainlink5")
 node_b = NodePath("../chainlink6")
 
 [node name="chainlink6" type="RigidBody2D" parent="."]
-position = Vector2(23, 27)
+position = Vector2(37, 17)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -183,12 +184,12 @@ position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D7" type="PinJoint2D" parent="."]
-position = Vector2(23, 30)
+position = Vector2(37, 20)
 node_a = NodePath("../chainlink6")
 node_b = NodePath("../chainlink7")
 
 [node name="chainlink7" type="RigidBody2D" parent="."]
-position = Vector2(23, 32)
+position = Vector2(37, 22)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -204,12 +205,12 @@ position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D8" type="PinJoint2D" parent="."]
-position = Vector2(23, 35)
+position = Vector2(37, 25)
 node_a = NodePath("../chainlink7")
 node_b = NodePath("../chainlink8")
 
 [node name="chainlink8" type="RigidBody2D" parent="."]
-position = Vector2(23, 38)
+position = Vector2(37, 28)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -225,12 +226,12 @@ position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D9" type="PinJoint2D" parent="."]
-position = Vector2(23, 40)
+position = Vector2(37, 30)
 node_a = NodePath("../chainlink8")
 node_b = NodePath("../chainlink9")
 
 [node name="chainlink9" type="RigidBody2D" parent="."]
-position = Vector2(23, 44)
+position = Vector2(37, 34)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -246,12 +247,12 @@ position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_l4ah5")
 
 [node name="PinJoint2D10" type="PinJoint2D" parent="."]
-position = Vector2(23, 40)
+position = Vector2(37, 30)
 node_a = NodePath("../chainlink9")
 node_b = NodePath("../TimePiece")
 
 [node name="TimePiece" type="RigidBody2D" parent="."]
-position = Vector2(24, 49)
+position = Vector2(38, 39)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
@@ -279,6 +280,7 @@ shape = SubResource("CircleShape2D_n7866")
 wait_time = 0.5
 
 [node name="rangearea" type="Area2D" parent="."]
+position = Vector2(14, -10)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rangearea"]

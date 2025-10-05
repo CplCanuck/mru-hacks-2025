@@ -546,7 +546,6 @@ collision_mask = 5
 script = ExtResource("1_cvnsp")
 
 [node name="staff" parent="." instance=ExtResource("4_vgqql")]
-position = Vector2(13, -7)
 speed = null
 cooldown = null
 
