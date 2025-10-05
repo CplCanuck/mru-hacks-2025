@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d00acyros1td2"]
+[gd_scene load_steps=11 format=3 uid="uid://d00acyros1td2"]
 
 [ext_resource type="Texture2D" uid="uid://jurksx8lkkgm" path="res://Assets/stick.png" id="1_l4ah5"]
 [ext_resource type="Script" uid="uid://bbyjv72uqst43" path="res://Staff/staff.gd" id="1_qwret"]
@@ -13,6 +13,9 @@ size = Vector2(6, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tmr3"]
 radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7866"]
+radius = 9.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n7866"]
 radius = 59.0
@@ -264,6 +267,17 @@ texture = ExtResource("5_n7866")
 position = Vector2(-0.99999994, -1)
 shape = SubResource("CircleShape2D_8tmr3")
 
+[node name="hitbox" type="Area2D" parent="TimePiece"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TimePiece/hitbox"]
+position = Vector2(-0.99999994, -1)
+shape = SubResource("CircleShape2D_n7866")
+
+[node name="canhittimer" type="Timer" parent="TimePiece/hitbox"]
+wait_time = 0.5
+
 [node name="rangearea" type="Area2D" parent="."]
 collision_layer = 0
 
@@ -275,3 +289,6 @@ shape = SubResource("CapsuleShape2D_n7866")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[connection signal="area_entered" from="TimePiece/hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="TimePiece/hitbox/canhittimer" to="." method="_on_canhittimer_timeout"]

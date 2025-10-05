@@ -1,4 +1,5 @@
 extends Area2D
+class_name Hurtbox
 
 ## Also a health component
 @export var health : int = 0
