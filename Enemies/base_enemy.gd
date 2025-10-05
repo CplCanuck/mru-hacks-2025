@@ -20,6 +20,7 @@ var chase_position : Vector2 = global_position
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var hurtbox_component: Hurtbox = $HurtboxComponent
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # TODO unsure how to manage behaviour.
 # maybe should have things defined in resources ?? idk
@@ -52,6 +53,11 @@ func chase_action(delta):
 	velocity *= 0.7
 	velocity += global_position.direction_to(nav_agent.get_next_path_position()) * move_speed * delta
 	nav_agent.get_next_path_position()
+	
+	if velocity.x < 0 :
+		animated_sprite_2d.scale.x = abs(animated_sprite_2d.scale.x) * -1
+	elif velocity.x > 0 :
+		animated_sprite_2d.scale.x = abs(animated_sprite_2d.scale.x)
 	
 	move_and_slide()
 	
