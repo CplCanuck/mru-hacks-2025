@@ -27,5 +27,5 @@ func interact():
 
 ## Clears text when the player leaves the nearby area
 func _on_ignore_range_body_exited(body: Node2D) -> void:
-    if body is Player:
-        clear_text.emit(text)
+	if body is Player:
+		clear_text.emit(text)

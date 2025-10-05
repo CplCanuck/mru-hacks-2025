@@ -49,11 +49,11 @@ func _ready() -> void:
 		+  "on the ground. \n" \
 		+  "It was very to them to have it tie their ghost down."
 	signpost_component.centered = true
-	
+
 func health_depleted():
-    $chain.set_modulate(Color(255,0,0,0.5))
-    can_be_destroyed = true
-    pass
+	$chain.set_modulate(Color(255,0,0,0.5))
+	can_be_destroyed = true
+	pass
 
 func destroyed():
 	enemy.queue_free()
@@ -68,5 +68,3 @@ func _physics_process(delta: float) -> void:
 			enemy.position = enemy.position.normalized() * enemy_max_range
 	
 		chain_enemy_connection.get_child(0).shape.b = enemy.position
-	
-	
