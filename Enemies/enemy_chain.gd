@@ -14,22 +14,26 @@ Should be the parent.
 ## The length of the chain. 
 ## Should be longer than enemy_max_range so it always droops a bit.
 @export var chain_length : int = 120
+@export var enemy: Enemy
+var hurt_box: Hurtbox
+var can_be_destroyed = false
 
 func _ready() -> void:
-	for child in get_children():
-		if child is Enemy :
-			$PinJoint2D10.set_node_b(child.get_path())
-			pass
-			#child.post_position = global_position
-	pass 
+	$chain/PinJoint2D10.set_node_b(enemy.get_path())
+	hurt_box = enemy.get_node("HurtboxComponent")
+	hurt_box.connect("health_depleted",health_depleted)
 	
-	
+func health_depleted():
+	$chain.set_modulate(Color(255,0,0,0.5))
+	can_be_destroyed = true
+	pass
+
+func destroyed():
+	enemy.queue_free()
+	$chain.queue_free()
+
 func _physics_process(delta: float) -> void:
-	for child in get_children():
-		if child is Enemy :
-			# NOTE maybe move this to the enemy??
-			if Vector2.ZERO.distance_to(child.position) > enemy_max_range :
-				child.position = child.position.normalized() * enemy_max_range
-				
-			pass
+	if enemy:
+		if Vector2.ZERO.distance_to(enemy.position) > enemy_max_range :
+			enemy.position = enemy.position.normalized() * enemy_max_range
 	pass
