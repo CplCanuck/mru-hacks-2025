@@ -385,7 +385,7 @@ position = Vector2(220, 266)
 item = 1
 
 [node name="Ghost3" parent="YSort/Enemies" instance=ExtResource("5_knhb2")]
-position = Vector2(583, 214)
+position = Vector2(579, 204)
 item = 2
 
 [node name="Ghost" parent="YSort/Enemies" instance=ExtResource("5_knhb2")]
@@ -428,15 +428,15 @@ scale = Vector2(17.720255, 36.759506)
 texture = ExtResource("4_kiou0")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Background/TreeBackground"]
-position = Vector2(767.96045, 606.2172)
+position = Vector2(892.2688, 632.6271)
 rotation = 1.5707964
-scale = Vector2(8.471099, 19.45902)
+scale = Vector2(11.77233, 34.997566)
 texture = ExtResource("4_kiou0")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Background/TreeBackground"]
-position = Vector2(587, 627.38715)
+position = Vector2(481.58826, 651.06494)
 rotation = 1.5707964
-scale = Vector2(7.617338, 19.45902)
+scale = Vector2(10.577061, 32.635487)
 texture = ExtResource("4_kiou0")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Background/TreeBackground"]
@@ -458,9 +458,9 @@ scale = Vector2(11.182989, 8.777423)
 texture = ExtResource("4_kiou0")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Background/TreeBackground"]
-position = Vector2(121.52145, 500.7461)
+position = Vector2(79.717766, 573.1522)
 rotation = -1.0471976
-scale = Vector2(11.6670475, 29.774643)
+scale = Vector2(22.11797, 29.774643)
 texture = ExtResource("4_kiou0")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Background/TreeBackground"]
