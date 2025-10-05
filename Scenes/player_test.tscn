@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://x1tc55goikvx"]
 
-[ext_resource type="PackedScene" uid="uid://b0g05sv23vr6u" path="res://Scenes/player.tscn" id="1_xjjte"]
+[ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_xjjte"]
 [ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="2_acvas"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="3_pm723"]
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="4_70u62"]
@@ -17,7 +17,7 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_xjjte")]
 y_sort_enabled = true
-position = Vector2(300, 214)
+position = Vector2(476, 286)
 
 [node name="Gravestone" parent="." instance=ExtResource("2_acvas")]
 y_sort_enabled = true

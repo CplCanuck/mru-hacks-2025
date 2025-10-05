@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c26lqfbdckgon" path="res://Elements/gravestone.gd" id="1_7ua5i"]
 [ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="1_loovt"]
-[ext_resource type="Texture2D" uid="uid://ntj3glpu218v" path="res://icon.svg" id="2_7ua5i"]
+[ext_resource type="Texture2D" uid="uid://b7n6hkvadbv47" path="res://Assets/Grave.png" id="3_7ua5i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ua5i"]
-radius = 500.0
+radius = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loovt"]
-size = Vector2(140, 140)
+size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rulau"]
-size = Vector2(100, 100)
+size = Vector2(20, 25)
 
 [node name="Gravestone" type="StaticBody2D"]
 script = ExtResource("1_7ua5i")
@@ -29,7 +29,7 @@ shape = SubResource("RectangleShape2D_loovt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.775, 0.775)
-texture = ExtResource("2_7ua5i")
+texture = ExtResource("3_7ua5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rulau")
