@@ -32,21 +32,13 @@ enum {
 var state := IDLE
 
 func _process(delta: float) -> void:
-	print(state)
 	match state :
 		IDLE :
 			idle_action()
 		CHASE :
 			chase_action(delta)
-	
-	if global_position.distance_to(post_position) < max_range :
-		
-		# would prob be simpler to do this at the parent.
-		pass
-
 
 func idle_action():
-	# TODO detect player
 	pass
 	
 func chase_action(delta):

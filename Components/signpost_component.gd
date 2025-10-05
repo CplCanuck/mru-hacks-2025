@@ -3,6 +3,7 @@ class_name Signpost
 
 @export var text:String  = ""
 var dialogue_box : Control
+@export var time:int = 5
 
 signal change_dialogue_box(text)
 
@@ -13,4 +14,4 @@ func interact():
 	if get_parent() is Gravestone :
 		if dialogue_box and dialogue_box.text == text:
 			GameManager.change_level(get_parent().level)
-	change_dialogue_box.emit(text)
+	change_dialogue_box.emit(text, time)
