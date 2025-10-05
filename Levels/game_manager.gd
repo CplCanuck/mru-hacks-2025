@@ -20,3 +20,7 @@ var level_scenes = {
 func change_level(level : levels):
 	if level != levels.NONE:
 		print(get_tree().change_scene_to_packed(level_scenes[level]))
+
+func _ready() :
+	get_window().mode = get_window().MODE_MAXIMIZED
+	pass
