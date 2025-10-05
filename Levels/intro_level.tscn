@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=4 uid="uid://c2t3i18yhignk"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_isgbt"]
-[ext_resource type="Script" path="res://Levels/intro_level.gd" id="1_thyg4"]
+[ext_resource type="Script" uid="uid://b3hoj4ark51hx" path="res://Levels/intro_level.gd" id="1_thyg4"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="1_u0dav"]
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_dxy3b"]
 [ext_resource type="FontFile" uid="uid://brefpagrm1qiq" path="res://Assets/BoldPixels.ttf" id="3_vqhhj"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="4_oy12b"]
 [ext_resource type="PackedScene" uid="uid://csfximkpnymc4" path="res://NPCs/senior_npc_tp.tscn" id="5_5q034"]
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="7_fxqhs"]
-[ext_resource type="PackedScene" path="res://NPCs/friend.tscn" id="8_vqhhj"]
+[ext_resource type="PackedScene" uid="uid://dt0p0xav8tsdn" path="res://NPCs/friend.tscn" id="8_vqhhj"]
 [ext_resource type="PackedScene" uid="uid://dp6vit1pkxvs2" path="res://Scenes/Tree.tscn" id="9_fxqhs"]
 
 [sub_resource type="Curve2D" id="Curve2D_hsxvj"]
@@ -141,19 +141,20 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/Container"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_vqhhj")
 theme_override_font_sizes/font_size = 32
 text = "250 years later, you find your way back to the village 
 only to find a graveyard that has been abandoned by all
  except the spirits."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BaseEnemy" parent="." instance=ExtResource("7_fxqhs")]
 position = Vector2(98, 422)
