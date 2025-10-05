@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_pvy0h"]
 [ext_resource type="Texture2D" uid="uid://ccv44ilecbocj" path="res://Assets/GrassBase.png" id="3_pvy0h"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="4_om7uc"]
-[ext_resource type="PackedScene" uid="uid://bnhyfa1xv47dk" path="res://Enemies/Ghost.tscn" id="5_cph7v"]
-[ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="6_ya8ts"]
+[ext_resource type="PackedScene" path="res://Enemies/Ghost.tscn" id="5_cph7v"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="7_whtlt"]
-[ext_resource type="PackedScene" uid="uid://dp6vit1pkxvs2" path="res://Scenes/Tree.tscn" id="8_whtlt"]
+[ext_resource type="PackedScene" uid="uid://vv7smke2nv0n" path="res://NPCs/kidnpc.tscn" id="8_2848f"]
+[ext_resource type="PackedScene" path="res://Scenes/Tree.tscn" id="8_whtlt"]
 
 [node name="LevelOne" type="Node2D"]
 
@@ -241,7 +241,7 @@ position = Vector2(-15, -19)
 y_sort_enabled = true
 
 [node name="Ghost" parent="YSort/Enemies" instance=ExtResource("5_cph7v")]
-position = Vector2(651, 432)
+position = Vector2(634, 409)
 
 [node name="Ghost2" parent="YSort/Enemies" instance=ExtResource("5_cph7v")]
 position = Vector2(772, 271)
@@ -252,13 +252,6 @@ position = Vector2(773, 553)
 [node name="Player" parent="YSort" instance=ExtResource("1_wi846")]
 y_sort_enabled = true
 position = Vector2(230, 435)
-
-[node name="Gravestone" parent="YSort" instance=ExtResource("6_ya8ts")]
-position = Vector2(588, 198)
-level = 4
-text = "
-
-Continue to Level 2"
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_pvy0h")]
 player = NodePath("../YSort/Player")
@@ -365,3 +358,6 @@ texture = ExtResource("3_pvy0h")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource("7_whtlt")]
+
+[node name="KidNPC_TP" parent="." instance=ExtResource("8_2848f")]
+position = Vector2(580, 244)

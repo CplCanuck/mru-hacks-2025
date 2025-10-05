@@ -8,6 +8,7 @@ enum levels {
 	ONE,
 	TWO
 }
+var Graves_saved = 0
 
 var level_scenes = {
 	levels.INTRO : preload("res://Levels/intro_level.tscn"),#.instantiate(),
