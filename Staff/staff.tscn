@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d00acyros1td2"]
+[gd_scene load_steps=13 format=3 uid="uid://d00acyros1td2"]
 
 [ext_resource type="Texture2D" uid="uid://jurksx8lkkgm" path="res://Assets/stick.png" id="1_l4ah5"]
 [ext_resource type="Script" uid="uid://bbyjv72uqst43" path="res://Staff/staff.gd" id="1_qwret"]
@@ -16,6 +16,15 @@ radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n7866"]
 radius = 9.0
+
+[sub_resource type="Gradient" id="Gradient_n7866"]
+offsets = PackedFloat32Array(0.04888889, 0.4, 0.7511111)
+colors = PackedColorArray(1, 1, 1, 1, 0.39568347, 0.39568347, 0.39568347, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8tmr3"]
+gradient = SubResource("Gradient_n7866")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n7866"]
 radius = 59.0
@@ -278,6 +287,12 @@ shape = SubResource("CircleShape2D_n7866")
 
 [node name="canhittimer" type="Timer" parent="TimePiece/hitbox"]
 wait_time = 0.5
+
+[node name="PointLight2D" type="PointLight2D" parent="TimePiece"]
+color = Color(0.9647059, 0.8039216, 0.14901961, 1)
+energy = 0.75
+texture = SubResource("GradientTexture2D_8tmr3")
+texture_scale = 4.0
 
 [node name="rangearea" type="Area2D" parent="."]
 position = Vector2(14, -10)

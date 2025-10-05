@@ -21,6 +21,13 @@ position = Vector2(0, 49)
 
 [node name="NPC" parent="." instance=ExtResource("4_pud8w")]
 position = Vector2(264, 19)
+text = "
+I'm Billy Boi! 
+My father, Billy Bob Senior told me witches are evil 
+but I guess he was wrong! 
+
+I hope you find your friend!
+"
 
 [node name="Gravestone" parent="." instance=ExtResource("5_qocsc")]
 position = Vector2(28, 23)

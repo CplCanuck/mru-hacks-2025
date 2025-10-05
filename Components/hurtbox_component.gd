@@ -15,3 +15,13 @@ func damage(attack : Attack):
 	
 	if attack.knockback_dir and attack.knockback :
 		take_knockback.emit(attack.knockback_dir, attack.knockback)
+	
+
+
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body is Player:
+		var attack = Attack.new()
+		attack.damage = 30
+		attack.knockback = 10
+		body.take_damage()
+	pass 
