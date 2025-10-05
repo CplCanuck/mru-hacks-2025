@@ -1,17 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://y5lm63ohq5yv"]
+[gd_scene load_steps=10 format=3 uid="uid://y5lm63ohq5yv"]
 
 [ext_resource type="Script" uid="uid://lv1wot7uamaq" path="res://Enemies/base_enemy.gd" id="1_dq6ge"]
 [ext_resource type="PackedScene" uid="uid://dvbiox115bl33" path="res://Components/hurtbox_component.tscn" id="2_hrovn"]
-[ext_resource type="Texture2D" uid="uid://ntj3glpu218v" path="res://icon.svg" id="3_dqv1m"]
+[ext_resource type="Texture2D" uid="uid://mq61r3mqbis4" path="res://Assets/spirit.png" id="3_dq6ge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dq6ge"]
-size = Vector2(167, 163)
+size = Vector2(50, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrovn"]
+atlas = ExtResource("3_dq6ge")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqv1m"]
+atlas = ExtResource("3_dq6ge")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c2aey"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_dqv1m")
+"texture": SubResource("AtlasTexture_hrovn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqv1m")
 }],
 "loop": true,
 "name": &"default",
@@ -19,10 +30,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dq6ge"]
-radius = 773.0414
+radius = 250.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrovn"]
-size = Vector2(120, 124)
+size = Vector2(30, 70)
 
 [node name="BaseEnemy" type="CharacterBody2D"]
 motion_mode = 1
@@ -36,7 +47,11 @@ position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_dq6ge")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -8)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_c2aey")
+frame = 1
+frame_progress = 0.19176508
 
 [node name="player_detector" type="Area2D" parent="."]
 
