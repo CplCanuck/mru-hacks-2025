@@ -19,21 +19,21 @@ var hurt_box: Hurtbox
 var can_be_destroyed = false
 
 func _ready() -> void:
-	$chain/PinJoint2D10.set_node_b(enemy.get_path())
-	hurt_box = enemy.get_node("HurtboxComponent")
-	hurt_box.connect("health_depleted",health_depleted)
-	
+    $chain/PinJoint2D10.set_node_b(enemy.get_path())
+    hurt_box = enemy.get_node("HurtboxComponent")
+    hurt_box.connect("health_depleted",health_depleted)
+    
 func health_depleted():
-	$chain.set_modulate(Color(255,0,0,0.5))
-	can_be_destroyed = true
-	pass
+    $chain.set_modulate(Color(255,0,0,0.5))
+    can_be_destroyed = true
+    pass
 
 func destroyed():
-	enemy.queue_free()
-	$chain.queue_free()
+    enemy.queue_free()
+    $chain.queue_free()
 
 func _physics_process(delta: float) -> void:
-	if enemy:
-		if Vector2.ZERO.distance_to(enemy.position) > enemy_max_range :
-			enemy.position = enemy.position.normalized() * enemy_max_range
-	pass
+    if enemy:
+        if Vector2.ZERO.distance_to(enemy.position) > enemy_max_range :
+            enemy.position = enemy.position.normalized() * enemy_max_range
+    pass

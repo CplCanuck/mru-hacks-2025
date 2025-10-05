@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_pvy0h"]
 [ext_resource type="Texture2D" uid="uid://ccv44ilecbocj" path="res://Assets/GrassBase.png" id="3_pvy0h"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="4_om7uc"]
-[ext_resource type="Texture2D" uid="uid://ntj3glpu218v" path="res://icon.svg" id="5_cph7v"]
+[ext_resource type="PackedScene" uid="uid://bnhyfa1xv47dk" path="res://Enemies/Ghost.tscn" id="5_cph7v"]
 
 [node name="LevelOne" type="Node2D"]
 
@@ -115,17 +115,11 @@ texture = ExtResource("3_pvy0h")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemies"]
-position = Vector2(755, 549)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_cph7v")
+[node name="Ghost" parent="Enemies" instance=ExtResource("5_cph7v")]
+position = Vector2(651, 432)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Enemies"]
-position = Vector2(749, 284)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_cph7v")
+[node name="Ghost2" parent="Enemies" instance=ExtResource("5_cph7v")]
+position = Vector2(772, 271)
 
-[node name="Sprite2D3" type="Sprite2D" parent="Enemies"]
-position = Vector2(648, 435)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_cph7v")
+[node name="Ghost3" parent="Enemies" instance=ExtResource("5_cph7v")]
+position = Vector2(773, 553)
