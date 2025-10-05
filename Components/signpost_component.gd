@@ -13,16 +13,17 @@ signal clear_text(text)
 var curr_showing : bool = false
 
 func interact():
-	
-	if get_parent() is Gravestone :
-		if dialogue_box and dialogue_box.text == text:
-			GameManager.change_level(get_parent().level)
-	#change_dialogue_box.emit(text, time, centered)
-	if get_parent() is TP_NPC:
-		if dialogue_box and dialogue_box.text == text:
-			GameManager.change_level(get_parent().level)
-	change_dialogue_box.emit(text, time, centered)
-	
+    
+    if get_parent() is Gravestone :
+        if dialogue_box and dialogue_box.text == text:
+            GameManager.change_level(get_parent().level)
+    #change_dialogue_box.emit(text, time, centered)
+    if get_parent() is TP_NPC:
+        if dialogue_box and dialogue_box.text == text:
+            GameManager.Graves_saved += 1
+            GameManager.change_level(get_parent().level)
+    change_dialogue_box.emit(text, time, centered)
+    
 
 
 ## Clears text when the player leaves the nearby area
