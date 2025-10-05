@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://byjmdu6hnqlpd"]
+[gd_scene load_steps=7 format=3 uid="uid://byjmdu6hnqlpd"]
 
 [ext_resource type="Script" uid="uid://c26lqfbdckgon" path="res://Elements/gravestone.gd" id="1_7ua5i"]
 [ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="1_loovt"]
 [ext_resource type="Texture2D" uid="uid://ntj3glpu218v" path="res://icon.svg" id="2_7ua5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ua5i"]
+radius = 500.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loovt"]
 size = Vector2(140, 140)
@@ -15,6 +18,9 @@ script = ExtResource("1_7ua5i")
 
 [node name="SignpostComponent" parent="." instance=ExtResource("1_loovt")]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SignpostComponent/IgnoreRange" index="0"]
+shape = SubResource("CircleShape2D_7ua5i")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SignpostComponent"]
 shape = SubResource("RectangleShape2D_loovt")
 
@@ -24,3 +30,5 @@ texture = ExtResource("2_7ua5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rulau")
+
+[editable path="SignpostComponent"]

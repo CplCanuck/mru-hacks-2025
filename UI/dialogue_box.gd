@@ -10,7 +10,7 @@ func _ready():
 	for signpost : Signpost in get_tree().get_nodes_in_group("Signposts"):
 		signpost.change_dialogue_box.connect(change_text)
 		signpost.dialogue_box = text_box
-#		signpost.close_dialogue_box.connect(close)
+		signpost.clear_text.connect(clear_text)
 	pass
 	 
 
@@ -25,8 +25,10 @@ func change_text(text:String, time:int) :
 		text_box.text = text
 		timer.start(time)
 
-func close():
-	visible = false
+func clear_text(text):
+	if text == text_box.text :
+		visible = false
+		text_box.text = ""
 
 
 func _on_timer_timeout() -> void:

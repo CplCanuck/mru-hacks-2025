@@ -2,10 +2,12 @@ extends Area2D
 class_name Signpost
 
 @export var text:String  = ""
-var dialogue_box : Control
 @export var time:int = 5
 
-signal change_dialogue_box(text)
+var dialogue_box : Control
+
+signal change_dialogue_box(text, time)
+signal clear_text(text)
 
 var curr_showing : bool = false
 
@@ -15,3 +17,9 @@ func interact():
 		if dialogue_box and dialogue_box.text == text:
 			GameManager.change_level(get_parent().level)
 	change_dialogue_box.emit(text, time)
+
+
+## Clears text when the player leaves the nearby area
+func _on_ignore_range_body_exited(body: Node2D) -> void:
+	if body is Player:
+		clear_text.emit(text)

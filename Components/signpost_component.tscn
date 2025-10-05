@@ -4,3 +4,5 @@
 
 [node name="SignpostComponent" type="Area2D" groups=["Signposts"]]
 script = ExtResource("1_v2sbv")
+
+[node name="IgnoreRange" type="Area2D" parent="."]
