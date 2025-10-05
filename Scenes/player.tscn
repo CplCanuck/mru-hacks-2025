@@ -553,7 +553,7 @@ shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fs7ks")
-animation = &"idle"
+animation = &"walk"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -598,6 +598,12 @@ shape = SubResource("RectangleShape2D_6t5aa")
 [node name="Marker2D" type="Marker2D" parent="."]
 visible = false
 position = Vector2(35, 0)
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[node name="Marker2D" type="Marker2D" parent="InteractionRange"]
+position = Vector2(0, 79)
 
 [node name="Camera2D" type="Camera2D" parent="Marker2D"]
 zoom = Vector2(2.5, 2.5)
