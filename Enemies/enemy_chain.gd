@@ -21,17 +21,17 @@ var can_be_destroyed = false
 @onready var chain_enemy_connection: Area2D = $ChainEnemyConnection
 
 enum items {
-    LOCKET,
-    DOLL,
-    WOODEN_HORSE,
-    NECKLACE
+	LOCKET,
+	DOLL,
+	WOODEN_HORSE,
+	NECKLACE
 }
 
 var items_dict = {
-    items.LOCKET : "locket" ,#.instantiate(),
-    items.DOLL : "doll" ,#.instantiate(),
-    items.WOODEN_HORSE : "wooden horse",#.instantiate(),
-    items.NECKLACE : "necklace" #.instantiate(),
+	items.LOCKET : "locket" ,#.instantiate(),
+	items.DOLL : "doll" ,#.instantiate(),
+	items.WOODEN_HORSE : "wooden horse",#.instantiate(),
+	items.NECKLACE : "necklace" #.instantiate(),
 }
 
 @export var item : items = items.LOCKET :
@@ -63,20 +63,19 @@ func _ready() -> void:
 	signpost_component.centered = true
 
 func health_depleted():
-    $chain.set_modulate(Color(255,0,0,0.5))
-    can_be_destroyed = true
-    pass
+	$chain.set_modulate(Color(255,0,0,0.5))
+	can_be_destroyed = true
+	pass
 
 func destroyed():
-    enemy.queue_free()
-    $chain.queue_free()
-    $ChainEnemyConnection.queue_free()
-    signpost_component.monitorable = true
-    signpost_component.monitoring = true
-    
+	enemy.queue_free()
+	$chain.queue_free()
+	$ChainEnemyConnection.queue_free()
+	signpost_component.monitorable = true
+	signpost_component.monitoring = true
+	
 func _physics_process(delta: float) -> void:
-    if enemy:
-        if Vector2.ZERO.distance_to(enemy.position) > enemy_max_range :
-            enemy.position = enemy.position.normalized() * enemy_max_range
-    
-        chain_enemy_connection.get_child(0).shape.b = enemy.position
+	if enemy:
+		if Vector2.ZERO.distance_to(enemy.position) > enemy_max_range :
+			enemy.position = enemy.position.normalized() * enemy_max_range
+			chain_enemy_connection.get_child(0).shape.b = enemy.position

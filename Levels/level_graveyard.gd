@@ -11,26 +11,26 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    if GameManager.Graves_saved == 0:
-        # Disable level 2 grave processing
-        level_2_gravestone.get_child(0).monitorable = false
-        
-    elif GameManager.Graves_saved == 1:
-        # Disable level 1 grave
-        level_1_grave.visible = true
-        level_1_gravestone.visible = false
-        level_1_gravestone.get_child(0).monitorable = false
-        
-        # Enable level 2 grave
-        level_2_broken.visible = false
-        level_2_gravestone.visible = true
-        level_2_gravestone.get_child(0).monitorable = true
-        
-    elif GameManager.Graves_saved == 2:
-        # Disable graves
-        level_1_gravestone.get_child(0).monitorable = false
-        level_2_gravestone.get_child(0).monitorable = false
-        level_2_gravestone.visible = true
-        
-        # Enable Special Tree
-        special_tree.visible = true
+	if GameManager.Graves_saved == 0:
+		# Disable level 2 grave processing
+		level_2_gravestone.get_child(0).monitorable = false
+		
+	elif GameManager.Graves_saved == 1:
+		# Disable level 1 grave
+		level_1_grave.visible = true
+		level_1_gravestone.visible = false
+		level_1_gravestone.get_child(0).monitorable = false
+		
+		# Enable level 2 grave
+		level_2_broken.visible = false
+		level_2_gravestone.visible = true
+		level_2_gravestone.get_child(0).monitorable = true
+		
+	elif GameManager.Graves_saved == 2:
+		# Disable graves
+		level_1_gravestone.get_child(0).monitorable = false
+		level_2_gravestone.get_child(0).monitorable = false
+		level_2_gravestone.visible = true
+		
+		# Enable Special Tree
+		special_tree.visible = true
