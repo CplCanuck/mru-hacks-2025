@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://c2s6c6nxu5xxs"]
+[gd_scene load_steps=7 format=4 uid="uid://c2s6c6nxu5xxs"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_b3cm0"]
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_q5rn2"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="3_q5rn2"]
 [ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="4_w6vlc"]
 [ext_resource type="Texture2D" uid="uid://ddfjoybjtqicn" path="res://Assets/BrokenGrave.png" id="5_exm8g"]
+[ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="6_exm8g"]
 
 [node name="LevelGraveyard" type="Node2D"]
 
@@ -75,3 +76,7 @@ texture = ExtResource("5_exm8g")
 [node name="Sprite2D11" type="Sprite2D" parent="Graves"]
 position = Vector2(601, 337)
 texture = ExtResource("5_exm8g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource("6_exm8g")]
