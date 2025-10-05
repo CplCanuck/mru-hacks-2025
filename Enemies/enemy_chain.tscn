@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://m50tlqmjxlga"]
+[gd_scene load_steps=17 format=3 uid="uid://m50tlqmjxlga"]
 
 [ext_resource type="Script" uid="uid://cmhqosuiq1pka" path="res://Enemies/enemy_chain.gd" id="1_w1ygi"]
 [ext_resource type="Texture2D" uid="uid://c1n6nbj1pia7l" path="res://Assets/sparkle.png" id="2_8sphn"]
@@ -78,6 +78,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdn3"]
 size = Vector2(6, 5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mnogq"]
+b = Vector2(0, 0)
 
 [node name="EnemyChain" type="Node2D"]
 script = ExtResource("1_w1ygi")
@@ -307,3 +310,10 @@ texture = ExtResource("4_ti5ly")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chain/chainlink9"]
 position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_uvdn3")
+
+[node name="ChainEnemyConnection" type="Area2D" parent="."]
+collision_layer = 536870912
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainEnemyConnection"]
+shape = SubResource("SegmentShape2D_mnogq")

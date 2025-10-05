@@ -598,12 +598,11 @@ shape = SubResource("RectangleShape2D_6t5aa")
 [node name="Marker2D" type="Marker2D" parent="InteractionRange"]
 position = Vector2(0, 79)
 
-[node name="Camera2D" type="Camera2D" parent="Marker2D"]
+[node name="Marker2D#Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
-
 
 [node name="AttackTimer" type="Timer" parent="."]
 one_shot = true
@@ -617,6 +616,11 @@ hframes = 13
 
 [node name="DashTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="DashChainDetection" type="RayCast2D" parent="."]
+collision_mask = 536870912
+collide_with_areas = true
+collide_with_bodies = false
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

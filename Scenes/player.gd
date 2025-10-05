@@ -14,6 +14,7 @@ var dash_start_pos := Vector2.ZERO
 var dash_cooldown := 2.5
 var dash_opacity := 153
 @onready var dash_timer: Timer = $DashTimer
+@onready var dash_chain_detection: RayCast2D = $DashChainDetection
 
 
 @onready var dash_shadow: Sprite2D = $DashShadow
@@ -68,7 +69,16 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("dash"):
 		if dashing :
-			# turn off physics
+			
+			# destroying chains
+			dash_chain_detection.target_position = dash_start_pos - global_position
+			dash_chain_detection.force_raycast_update()
+			var chain = dash_chain_detection.get_collider()
+			#print("Chain = " + chain)
+			if chain :
+				if chain.get_parent().can_be_destroyed: 
+					chain.get_parent().destroyed()
+				
 			position = dash_start_pos
 		else :
 			dash_start_pos = global_position
@@ -79,6 +89,7 @@ func _input(event: InputEvent) -> void:
 		
 		dashing = not dashing
 		dash_shadow.visible = dashing
+
 
 func end_attack() -> void:
 	print("end_attack")

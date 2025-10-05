@@ -18,6 +18,9 @@ Should be the parent.
 var hurt_box: Hurtbox
 var can_be_destroyed = false
 
+@onready var chain_enemy_connection: Area2D = $ChainEnemyConnection
+
+
 func _ready() -> void:
 	$chain/PinJoint2D10.set_node_b(enemy.get_path())
 	hurt_box = enemy.get_node("HurtboxComponent")
@@ -31,9 +34,13 @@ func health_depleted():
 func destroyed():
 	enemy.queue_free()
 	$chain.queue_free()
-
+	$ChainEnemyConnection.queue_free()
+	
 func _physics_process(delta: float) -> void:
 	if enemy:
 		if Vector2.ZERO.distance_to(enemy.position) > enemy_max_range :
 			enemy.position = enemy.position.normalized() * enemy_max_range
-	pass
+	
+		chain_enemy_connection.get_child(0).shape.b = enemy.position
+	
+	

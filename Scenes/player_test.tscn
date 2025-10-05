@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="4_70u62"]
 [ext_resource type="PackedScene" uid="uid://m50tlqmjxlga" path="res://Enemies/enemy_chain.tscn" id="4_yi8xp"]
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="6_wix4t"]
-[ext_resource type="PackedScene" path="res://Scenes/GrassTileset.tscn" id="7_5n1oj"]
+[ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="7_5n1oj"]
 [ext_resource type="Texture2D" uid="uid://ccv44ilecbocj" path="res://Assets/GrassBase.png" id="8_j8edj"]
 
 [node name="PlayerTest" type="Node2D"]
