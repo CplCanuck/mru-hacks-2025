@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://c2t3i18yhignk"]
+[gd_scene load_steps=16 format=4 uid="uid://c2t3i18yhignk"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_isgbt"]
-[ext_resource type="Script" uid="uid://b3hoj4ark51hx" path="res://Levels/intro_level.gd" id="1_thyg4"]
+[ext_resource type="Script" path="res://Levels/intro_level.gd" id="1_thyg4"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="1_u0dav"]
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_dxy3b"]
+[ext_resource type="FontFile" uid="uid://brefpagrm1qiq" path="res://Assets/BoldPixels.ttf" id="3_vqhhj"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="4_oy12b"]
 [ext_resource type="PackedScene" uid="uid://csfximkpnymc4" path="res://NPCs/senior_npc_tp.tscn" id="5_5q034"]
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="7_fxqhs"]
-[ext_resource type="PackedScene" uid="uid://dt0p0xav8tsdn" path="res://NPCs/friend.tscn" id="8_vqhhj"]
+[ext_resource type="PackedScene" path="res://NPCs/friend.tscn" id="8_vqhhj"]
 [ext_resource type="PackedScene" uid="uid://dp6vit1pkxvs2" path="res://Scenes/Tree.tscn" id="9_fxqhs"]
 
 [sub_resource type="Curve2D" id="Curve2D_hsxvj"]
@@ -17,6 +18,33 @@ _data = {
 point_count = 16
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqhhj"]
+
+[sub_resource type="Animation" id="Animation_vqhhj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Container/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_fxqhs"]
 resource_name = "change"
@@ -60,33 +88,6 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_vqhhj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Container/Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hsxvj"]
 _data = {
 &"RESET": SubResource("Animation_vqhhj"),
@@ -105,6 +106,7 @@ offset_top = 241.0
 offset_right = 429.0
 offset_bottom = 264.0
 scale = Vector2(3.0182571, 3.0182571)
+theme_override_fonts/font = ExtResource("3_vqhhj")
 text = "RUN!"
 
 [node name="Player" parent="." instance=ExtResource("1_isgbt")]
@@ -147,6 +149,7 @@ theme_override_constants/margin_bottom = 0
 [node name="Label" type="Label" parent="CanvasLayer/Container"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vqhhj")
 theme_override_font_sizes/font_size = 32
 text = "250 years later, you find your way back to the village 
 only to find a graveyard that has been abandoned by all
