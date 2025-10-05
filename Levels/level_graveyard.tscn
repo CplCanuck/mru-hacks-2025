@@ -262,8 +262,8 @@ texture = ExtResource("7_nw6he")
 [node name="Gravestone" parent="Background/Graves/Level1Grave" instance=ExtResource("4_w6vlc")]
 level = 3
 text = "
-
-You enter the link to the past"
+Billy Boi
+RIP"
 
 [node name="Level2Grave" type="Node2D" parent="Background/Graves"]
 position = Vector2(601, 241)
@@ -274,6 +274,10 @@ texture = ExtResource("5_exm8g")
 [node name="Gravestone" parent="Background/Graves/Level2Grave" instance=ExtResource("4_w6vlc")]
 visible = false
 level = 4
+text = "
+Billy Bob Senior
+RIP
+"
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Graves"]
 position = Vector2(409, 337)

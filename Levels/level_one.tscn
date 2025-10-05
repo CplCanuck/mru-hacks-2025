@@ -355,3 +355,7 @@ texture = ExtResource("3_pvy0h")
 
 [node name="KidNPC_TP" parent="." instance=ExtResource("8_2848f")]
 position = Vector2(580, 244)
+text = "I'm Billy Boi!
+My father, Billy Bob Senior told me witches are evil but I guess he was wrong!
+I hope you find your friend!
+"
