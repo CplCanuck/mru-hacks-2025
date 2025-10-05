@@ -1,7 +1,17 @@
 extends StaticBody2D
+class_name Gravestone
 
 @onready var signpost_component: Signpost = $SignpostComponent
 
+enum levels {
+	NONE,
+	INTRO,
+	HUB,
+	ONE,
+	TWO
+}
+
+@export var level : levels = levels.NONE
 
 @export var text : String = "":
 	set(val) :
@@ -12,3 +22,5 @@ extends StaticBody2D
 func _ready():
 	# triggers set
 	text = text
+	
+	

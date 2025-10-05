@@ -8,6 +8,7 @@ func _ready():
 	# TODO : forget how to connect to signals
 	for signpost : Signpost in get_tree().get_nodes_in_group("Signposts"):
 		signpost.change_dialogue_box.connect(change_text)
+		signpost.dialogue_box = text_box
 #		signpost.close_dialogue_box.connect(close)
 	pass
 	 

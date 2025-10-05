@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="MRUHacks2025"
-run/main_scene="uid://x1tc55goikvx"
+run/main_scene="uid://crl3jjciruy0f"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Levels/game_manager.tscn"
 
 [global_group]
 
