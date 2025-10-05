@@ -51,9 +51,9 @@ func _ready() -> void:
 	signpost_component.centered = true
 	
 func health_depleted():
-	$chain.set_modulate(Color(255,0,0,0.5))
-	can_be_destroyed = true
-	pass
+    $chain.set_modulate(Color(255,0,0,0.5))
+    can_be_destroyed = true
+    pass
 
 func destroyed():
 	enemy.queue_free()

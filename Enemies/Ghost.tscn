@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnhyfa1xv47dk"]
+
+[ext_resource type="PackedScene" uid="uid://m50tlqmjxlga" path="res://Enemies/enemy_chain.tscn" id="1_7sqyf"]
+[ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="2_gfikl"]
+
+[node name="Ghost" type="Node2D"]
+
+[node name="EnemyChain" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("1_7sqyf")]
+enemy = NodePath("BaseEnemy")
+
+[node name="BaseEnemy" parent="EnemyChain" instance=ExtResource("2_gfikl")]
+position = Vector2(-1, 53)
+scale = Vector2(0.5, 0.5)
