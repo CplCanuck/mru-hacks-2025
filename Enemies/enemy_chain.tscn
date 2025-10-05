@@ -83,6 +83,7 @@ animations = [{
 size = Vector2(6, 5)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mnogq"]
+resource_local_to_scene = true
 b = Vector2(0, 0)
 
 [node name="EnemyChain" type="Node2D"]

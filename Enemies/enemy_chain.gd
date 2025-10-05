@@ -34,7 +34,18 @@ var items_dict = {
 	items.NECKLACE : "necklace" #.instantiate(),
 }
 
-@export var item : items = items.LOCKET
+@export var item : items = items.LOCKET :
+	set(val):
+		item = val
+		
+		if signpost_component: 
+			signpost_component.text = "\nYou find a " \
+				+  items_dict[item] \
+				+  " on the ground. \n" \
+				+  "It was very important to them to have" \
+				+ " tied their ghost down to earth."
+			signpost_component.centered = true
+		
 @onready var signpost_component: Signpost = $Twinkle/SignpostComponent
 
 
@@ -44,10 +55,11 @@ func _ready() -> void:
 	hurt_box.connect("health_depleted",health_depleted)
 	
 	# triggers set
-	signpost_component.text = "\nYou find a + " \
+	signpost_component.text = "\nYou find a" \
 		+  items_dict[item] \
 		+  "on the ground. \n" \
-		+  "It was very to them to have it tie their ghost down."
+		+  "It was very important to them to have\n" \
+		+ " tied their ghost down to earth."
 	signpost_component.centered = true
 
 func health_depleted():
