@@ -263,7 +263,9 @@ texture = ExtResource("7_nw6he")
 level = 3
 text = "
 Billy Boi
-RIP"
+RIP
+1425 - 1437
+"
 
 [node name="Level2Grave" type="Node2D" parent="Background/Graves"]
 position = Vector2(601, 241)
@@ -277,6 +279,7 @@ level = 4
 text = "
 Billy Bob Senior
 RIP
+1354 - 1431
 "
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Graves"]
