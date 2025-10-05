@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://csfximkpnymc4"]
+
+[ext_resource type="Script" uid="uid://cuaf5f0ixmw56" path="res://NPCs/kidnpc.gd" id="1_vc2jj"]
+[ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="2_0vomo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpwpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxakg"]
+size = Vector2(51, 38)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7mck"]
+radius = 9.0
+
+[node name="SeniorNPC_TP" type="CharacterBody2D"]
+script = ExtResource("1_vc2jj")
+text = "I'm Billy Boi! My father, Billy Bob Senior told me witches are evil but I guess he was wrong! I hope you find your friend!
+"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lpwpu")
+
+[node name="SignpostComponent" parent="." instance=ExtResource("2_0vomo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SignpostComponent"]
+position = Vector2(-3.5, -4)
+shape = SubResource("RectangleShape2D_vxakg")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_k7mck")

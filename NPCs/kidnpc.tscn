@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://vv7smke2nv0n"]
 
 [ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="1_0ikh5"]
-[ext_resource type="Script" uid="uid://cuaf5f0ixmw56" path="res://NPCs/npc.gd" id="1_k7mck"]
+[ext_resource type="Script" uid="uid://cuaf5f0ixmw56" path="res://NPCs/kidnpc.gd" id="1_k7mck"]
 [ext_resource type="Texture2D" uid="uid://c40oaml71gc5j" path="res://Assets/kid.png" id="1_vxakg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7mck"]

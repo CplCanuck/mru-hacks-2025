@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_b73jx"]
 [ext_resource type="PackedScene" uid="uid://m50tlqmjxlga" path="res://Enemies/enemy_chain.tscn" id="2_g5725"]
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="3_pud8w"]
-[ext_resource type="PackedScene" uid="uid://vv7smke2nv0n" path="res://NPCs/npc.tscn" id="4_pud8w"]
+[ext_resource type="PackedScene" uid="uid://vv7smke2nv0n" path="res://NPCs/kidnpc.tscn" id="4_pud8w"]
 [ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="5_qocsc"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="6_d1noo"]
 
@@ -21,7 +21,6 @@ position = Vector2(0, 49)
 
 [node name="NPC" parent="." instance=ExtResource("4_pud8w")]
 position = Vector2(264, 19)
-level = 2
 
 [node name="Gravestone" parent="." instance=ExtResource("5_qocsc")]
 position = Vector2(28, 23)
