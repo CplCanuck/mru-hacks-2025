@@ -1,0 +1,90 @@
+[gd_scene load_steps=15 format=3 uid="uid://bem5t3tywdesj"]
+
+[ext_resource type="Script" path="res://Elements/twinkle.gd" id="1_2jfi0"]
+[ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="1_slof0"]
+[ext_resource type="Texture2D" uid="uid://c1n6nbj1pia7l" path="res://Assets/sparkle.png" id="3_jspro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8b83"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f816w"]
+atlas = ExtResource("3_jspro")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_petcl"]
+atlas = ExtResource("3_jspro")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g5ix"]
+atlas = ExtResource("3_jspro")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36a6l"]
+atlas = ExtResource("3_jspro")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kx6g"]
+atlas = ExtResource("3_jspro")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpcvo"]
+atlas = ExtResource("3_jspro")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gufqs"]
+atlas = ExtResource("3_jspro")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckqof"]
+atlas = ExtResource("3_jspro")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v7nx"]
+atlas = ExtResource("3_jspro")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vfao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f816w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_petcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g5ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36a6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kx6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpcvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gufqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckqof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v7nx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Twinkle" type="Node2D"]
+script = ExtResource("1_2jfi0")
+
+[node name="SignpostComponent" parent="." instance=ExtResource("1_slof0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SignpostComponent"]
+shape = SubResource("RectangleShape2D_v8b83")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5vfao")
+frame_progress = 0.58120465
