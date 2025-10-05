@@ -545,6 +545,8 @@ script = ExtResource("1_cvnsp")
 
 [node name="staff" parent="." instance=ExtResource("4_vgqql")]
 position = Vector2(13, -7)
+speed = null
+cooldown = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_onrkg")
@@ -593,6 +595,9 @@ disabled = true
 position = Vector2(0, 30)
 shape = SubResource("RectangleShape2D_6t5aa")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+visible = false
+position = Vector2(35, 0)
 [node name="AttackTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -600,6 +605,8 @@ one_shot = true
 [node name="Marker2D" type="Marker2D" parent="InteractionRange"]
 position = Vector2(0, 79)
 
-[node name="Camera2D" type="Camera2D" parent="InteractionRange/Marker2D"]
+[node name="Camera2D" type="Camera2D" parent="Marker2D"]
 zoom = Vector2(2.5, 2.5)
+limit_smoothed = true
 position_smoothing_enabled = true
+rotation_smoothing_enabled = true
