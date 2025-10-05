@@ -63,8 +63,8 @@ radius = 250.0
 
 [node name="SeniorNPC_TP" type="CharacterBody2D"]
 script = ExtResource("1_0vomo")
-level = null
-text = null
+text = "
+I didn't need your help, witch. Go Away!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lpwpu")
@@ -85,3 +85,5 @@ scale = Vector2(0.74288577, 0.72149193)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_detector"]
 scale = Vector2(0.75812846, 0.7590414)
 shape = SubResource("CircleShape2D_qlq3r")
+
+[connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
