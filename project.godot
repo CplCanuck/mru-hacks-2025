@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="MRUHacks2025"
-run/main_scene="uid://x1tc55goikvx"
+run/main_scene="uid://crl3jjciruy0f"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Levels/game_manager.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+window/canvas_textures/default_texture_filter=0
 
 [global_group]
 
