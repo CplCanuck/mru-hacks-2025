@@ -3,9 +3,9 @@ class_name Hurtbox
 
 ## Also a health component
 @export var health : int = 0
-@export var take_knockback : bool = true
 
 signal health_depleted
+signal take_knockback(direction, force)
 # NOTE : Could have enemies recover from their vulnerable state too, but eh.
 
 func damage(attack : Attack):
@@ -13,9 +13,8 @@ func damage(attack : Attack):
 	if health <= 0 :
 		health_depleted.emit()
 	
-	if take_knockback :
-		# TODO
-		pass
+	if attack.knockback_dir and attack.knockback :
+		take_knockback.emit(attack.knockback_dir, attack.knockback)
 	
 
 

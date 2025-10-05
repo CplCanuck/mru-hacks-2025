@@ -18,6 +18,7 @@ var player_node : Node2D
 var chase_position : Vector2 = global_position
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var hurtbox_component: Hurtbox = $HurtboxComponent
 
 
 # TODO unsure how to manage behaviour.
@@ -30,6 +31,9 @@ enum {
 }
 
 var state := IDLE
+
+func _ready():
+	hurtbox_component.take_knockback.connect(take_knockback)
 
 func _process(delta: float) -> void:
 	match state :
@@ -45,13 +49,16 @@ func chase_action(delta):
 	
 	chase_position = player_node.global_position
 	nav_agent.target_position = chase_position
-	velocity = global_position.direction_to(nav_agent.get_next_path_position()) * move_speed * delta
+	velocity *= 0.7
+	velocity += global_position.direction_to(nav_agent.get_next_path_position()) * move_speed * delta
 	nav_agent.get_next_path_position()
 	
 	move_and_slide()
 	
 	pass
 
+func take_knockback(direction : Vector2, force : int) :
+	velocity += direction * force * 500
 
 func _on_player_detector_body_entered(body: Node2D) -> void:
 	if body is Player:
