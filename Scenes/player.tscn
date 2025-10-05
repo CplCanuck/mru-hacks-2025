@@ -599,6 +599,8 @@ shape = SubResource("RectangleShape2D_6t5aa")
 position = Vector2(0, 79)
 
 [node name="Marker2D#Camera2D" type="Camera2D" parent="."]
+visible = false
+enabled = false
 zoom = Vector2(2.5, 2.5)
 limit_smoothed = true
 position_smoothing_enabled = true

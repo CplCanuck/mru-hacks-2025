@@ -1,7 +1,7 @@
 extends Camera2D
 
-@export var follow_percentage_width := 0.2
-@export var follow_percentage_height := 0.2
+@export var follow_percentage_width := 0.333
+@export var follow_percentage_height := 0.333
 
 @onready var screen_scale := DisplayServer.screen_get_scale() 
 @onready var screen_width = get_viewport().size.x#DisplayServer.screen_get_size().x / screen_scale
@@ -10,6 +10,9 @@ extends Camera2D
 var speed := 100
 
 @export var player : Player
+
+func _ready() :
+	position = player.position
 
 func _physics_process(delta: float) -> void:
 	if player :
