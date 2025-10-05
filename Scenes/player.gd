@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const DASH_LENGTH = 100
 const ATTACK_TIME := 0.4
+var health = 100
 
 @export var attacking := false
 var last_direction := Vector2.RIGHT
@@ -52,9 +53,7 @@ func _physics_process(_delta: float) -> void:
 			$AnimationPlayer.play("AttackLeft")
 		else:
 			$AnimationPlayer.play("AttackRight")
-		#attacking = true
-		#attack_timer.start(ATTACK_TIME)
-			
+
 	# Dash
 	if Input.is_action_just_pressed("dash"):
 		pass
@@ -94,28 +93,37 @@ func _input(event: InputEvent) -> void:
 		dashing = not dashing
 		dash_shadow.visible = dashing
 
-
-#
-#func end_attack() -> void:
-	#print("end_attack")
-	#attacking = false
-
-#
-#func _on_attack_timer_timeout() -> void:
-	#end_attack()
+func take_damage(attack:Attack):
+	print("OW!")
+	health -= attack.damage
+	set_modulate(Color(255,0,0,0.5))
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	#knockback
+	#play animation hurt
+	if health <= 0:
+		#play death animation
+		GameManager.change_level(GameManager.levels.HUB)
 
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
 	dash_shadow.visible = false
 	dash_shadow.modulate.a8 = dash_opacity
-	pass # Replace with function body.
+	pass 
 
 
 func _on_animated_sprite_2d_animation_finished():
-	if $AnimatedSprite2D.animation == "attack":
+	if $AnimatedSprite2D.animation == "attack": # or hurt
 		if $AnimatedSprite2D.flip_h == true:
 			$AnimationPlayer.play("IdleLeft")
 		else:
 			$AnimationPlayer.play("IdleRight")
-	pass # Replace with function body.
+	pass 

@@ -17,3 +17,12 @@ func damage(attack : Attack):
 		# TODO
 		pass
 	
+
+
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body is Player:
+		var attack = Attack.new()
+		attack.damage = 30
+		attack.knockback = 10
+		body.take_damage()
+	pass 
