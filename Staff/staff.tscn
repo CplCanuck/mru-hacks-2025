@@ -307,5 +307,8 @@ shape = SubResource("CapsuleShape2D_n7866")
 one_shot = true
 autostart = true
 
+[node name="KnockbackTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="TimePiece/hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="TimePiece/hitbox/canhittimer" to="." method="_on_canhittimer_timeout"]
