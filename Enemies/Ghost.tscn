@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnhyfa1xv47dk"]
+[gd_scene load_steps=5 format=3 uid="uid://bnhyfa1xv47dk"]
 
 [ext_resource type="PackedScene" uid="uid://m50tlqmjxlga" path="res://Enemies/enemy_chain.tscn" id="1_7sqyf"]
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="2_gfikl"]
+
+[sub_resource type="Gradient" id="Gradient_7sqyf"]
+offsets = PackedFloat32Array(0, 0.72444445)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gfikl"]
+gradient = SubResource("Gradient_7sqyf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Ghost" type="Node2D"]
 
@@ -11,3 +20,9 @@ enemy = NodePath("BaseEnemy")
 [node name="BaseEnemy" parent="EnemyChain" instance=ExtResource("2_gfikl")]
 position = Vector2(-1, 53)
 scale = Vector2(0.5, 0.5)
+
+[node name="PointLight2D" type="PointLight2D" parent="EnemyChain/BaseEnemy"]
+color = Color(0.61960787, 0.6666667, 0.69803923, 1)
+energy = 0.75
+texture = SubResource("GradientTexture2D_gfikl")
+texture_scale = 2.0
