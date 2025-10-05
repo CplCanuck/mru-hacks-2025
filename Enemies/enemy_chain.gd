@@ -8,8 +8,6 @@ Should be the parent.
 
 # TODO make this a chain, currently just a line.
 
-
-
 ## The max distance the enemy is allowed to go to
 @export var enemy_max_range : int = 100
 
