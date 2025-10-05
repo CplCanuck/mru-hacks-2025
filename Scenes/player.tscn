@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://d00acyros1td2" path="res://Staff/staff.tscn" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://dng8t316dgbl4" path="res://Assets/witch.png" id="5_fkybt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
-radius = 15.0
-height = 45.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
+size = Vector2(20, 31.607681)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("5_fkybt")
@@ -550,9 +549,9 @@ speed = null
 cooldown = null
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 11.000001)
 scale = Vector2(0.7071438, 0.69603336)
-shape = SubResource("CapsuleShape2D_onrkg")
+shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fs7ks")
