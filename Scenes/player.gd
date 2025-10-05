@@ -23,6 +23,8 @@ var dash_opacity := 153
 @onready var interaction_range: Area2D = $InteractionRange
 @onready var attack_timer : Timer = $AttackTimer
 
+@onready var staff: Node2D = $staff
+
 func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -41,6 +43,11 @@ func _physics_process(_delta: float) -> void:
 				interaction_range.rotation_degrees = 180
 			Vector2.DOWN:
 				interaction_range.rotation_degrees = 0
+		
+		if direction.x < 0 :
+			staff.scale.x = -1
+		elif direction.x > 0: 
+			staff.scale.x = 1
 	else:
 		# Slow down player if not moving
 		velocity.x = move_toward(velocity.x, 0, SPEED)
