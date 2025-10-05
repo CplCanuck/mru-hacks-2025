@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vv7smke2nv0n"]
+[gd_scene load_steps=13 format=3 uid="uid://vv7smke2nv0n"]
 
 [ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="1_0ikh5"]
 [ext_resource type="Script" uid="uid://cuaf5f0ixmw56" path="res://NPCs/kidnpc.gd" id="1_k7mck"]
@@ -58,6 +58,9 @@ size = Vector2(51, 38)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7mck"]
 radius = 9.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmlyg"]
+radius = 250.0
+
 [node name="KidNPC_TP" type="CharacterBody2D"]
 script = ExtResource("1_k7mck")
 text = "I'm Billy Boi! My father, Billy Bob Senior told me witches are evil but I guess he was wrong! I hope you find your friend!
@@ -74,5 +77,15 @@ position = Vector2(-3.5, -4)
 shape = SubResource("RectangleShape2D_vxakg")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_k7mck")
+
+[node name="player_detector" type="Area2D" parent="."]
+scale = Vector2(0.74288577, 0.72149193)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_detector"]
+scale = Vector2(0.75812846, 0.7590414)
+shape = SubResource("CircleShape2D_tmlyg")
+
+[connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://c2s6c6nxu5xxs"]
+[gd_scene load_steps=12 format=4 uid="uid://c2s6c6nxu5xxs"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_b3cm0"]
+[ext_resource type="Script" uid="uid://dqbxnj20of356" path="res://Levels/level_graveyard.gd" id="1_tyi3d"]
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_q5rn2"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="3_q5rn2"]
 [ext_resource type="Texture2D" uid="uid://cik2s8gcwr0h4" path="res://Assets/rubble.png" id="4_gexnf"]
@@ -34,6 +35,7 @@ sources/0 = SubResource("TileSetAtlasSource_nw6he")
 
 [node name="LevelGraveyard" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_tyi3d")
 
 [node name="Player" parent="." instance=ExtResource("1_b3cm0")]
 position = Vector2(539, 511)

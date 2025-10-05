@@ -1,9 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://csfximkpnymc4"]
+[gd_scene load_steps=13 format=3 uid="uid://csfximkpnymc4"]
 
-[ext_resource type="Script" uid="uid://cuaf5f0ixmw56" path="res://NPCs/kidnpc.gd" id="1_vc2jj"]
+[ext_resource type="Script" uid="uid://dg8y0wxc6lory" path="res://NPCs/senior_npc_tp.gd" id="1_0vomo"]
 [ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="2_0vomo"]
+[ext_resource type="Texture2D" uid="uid://ds6huc4lic2mg" path="res://Assets/senior.png" id="2_lpwpu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycxp6"]
+atlas = ExtResource("2_lpwpu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsm4r"]
+atlas = ExtResource("2_lpwpu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s5fr"]
+atlas = ExtResource("2_lpwpu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqvwj"]
+atlas = ExtResource("2_lpwpu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvboy"]
+atlas = ExtResource("2_lpwpu")
+region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lpwpu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycxp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsm4r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s5fr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqvwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvboy")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxakg"]
 size = Vector2(51, 38)
@@ -11,10 +58,13 @@ size = Vector2(51, 38)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7mck"]
 radius = 9.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlq3r"]
+radius = 250.0
+
 [node name="SeniorNPC_TP" type="CharacterBody2D"]
-script = ExtResource("1_vc2jj")
-text = "I'm Billy Boi! My father, Billy Bob Senior told me witches are evil but I guess he was wrong! I hope you find your friend!
-"
+script = ExtResource("1_0vomo")
+level = null
+text = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lpwpu")
@@ -28,3 +78,10 @@ shape = SubResource("RectangleShape2D_vxakg")
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_k7mck")
+
+[node name="player_detector" type="Area2D" parent="."]
+scale = Vector2(0.74288577, 0.72149193)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_detector"]
+scale = Vector2(0.75812846, 0.7590414)
+shape = SubResource("CircleShape2D_qlq3r")
