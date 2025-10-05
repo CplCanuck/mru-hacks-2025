@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://vv7smke2nv0n"]
+
+[ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="1_0ikh5"]
+[ext_resource type="Script" uid="uid://cuaf5f0ixmw56" path="res://NPCs/npc.gd" id="1_k7mck"]
+[ext_resource type="Texture2D" uid="uid://c40oaml71gc5j" path="res://Assets/kid.png" id="1_vxakg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7mck"]
+atlas = ExtResource("1_vxakg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5705"]
+atlas = ExtResource("1_vxakg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlwy1"]
+atlas = ExtResource("1_vxakg")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pim4"]
+atlas = ExtResource("1_vxakg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuplg"]
+atlas = ExtResource("1_vxakg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ympci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7mck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5705")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlwy1")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pim4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuplg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxakg"]
+size = Vector2(51, 38)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7mck"]
+radius = 9.0
+
+[node name="KidNPC_TP" type="CharacterBody2D"]
+script = ExtResource("1_k7mck")
+text = "I'm Billy Boi! My father, Billy Bob Senior told me witches are evil but I guess he was wrong! I hope you find your friend!
+"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ympci")
+animation = &"hurt"
+
+[node name="SignpostComponent" parent="." instance=ExtResource("1_0ikh5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SignpostComponent"]
+position = Vector2(-3.5, -4)
+shape = SubResource("RectangleShape2D_vxakg")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_k7mck")
