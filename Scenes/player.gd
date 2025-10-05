@@ -47,9 +47,13 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
 	# Attacking
-	if Input.is_action_pressed("attack"):
-		attacking = true
-		attack_timer.start(ATTACK_TIME)
+	if Input.is_action_just_pressed("attack"):
+		if direction.x < 0:
+			$AnimationPlayer.play("AttackLeft")
+		else:
+			$AnimationPlayer.play("AttackRight")
+		#attacking = true
+		#attack_timer.start(ATTACK_TIME)
 			
 	# Dash
 	if Input.is_action_just_pressed("dash"):
@@ -91,18 +95,27 @@ func _input(event: InputEvent) -> void:
 		dash_shadow.visible = dashing
 
 
+#
+#func end_attack() -> void:
+	#print("end_attack")
+	#attacking = false
 
-func end_attack() -> void:
-	print("end_attack")
-	attacking = false
-
-
-func _on_attack_timer_timeout() -> void:
-	end_attack()
+#
+#func _on_attack_timer_timeout() -> void:
+	#end_attack()
 
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
 	dash_shadow.visible = false
 	dash_shadow.modulate.a8 = dash_opacity
+	pass # Replace with function body.
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == "attack":
+		if $AnimatedSprite2D.flip_h == true:
+			$AnimationPlayer.play("IdleLeft")
+		else:
+			$AnimationPlayer.play("IdleRight")
 	pass # Replace with function body.
