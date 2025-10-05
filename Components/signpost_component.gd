@@ -1,7 +1,7 @@
 extends Area2D
 class_name Signpost
 
-@export var text:String  = ""
+@export_multiline var text:String  = ""
 @export var time:int = 5
 @export var centered:bool = false
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c2s6c6nxu5xxs"]
+[gd_scene load_steps=18 format=4 uid="uid://c2s6c6nxu5xxs"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_b3cm0"]
 [ext_resource type="Script" uid="uid://dqbxnj20of356" path="res://Levels/level_graveyard.gd" id="1_tyi3d"]
@@ -8,10 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://byd0su3fohdb8" path="res://Assets/specialTree.png" id="4_hc1hc"]
 [ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="4_w6vlc"]
 [ext_resource type="Texture2D" uid="uid://ddfjoybjtqicn" path="res://Assets/BrokenGrave.png" id="5_exm8g"]
+[ext_resource type="PackedScene" uid="uid://143h4hrvonoa" path="res://Components/signpost_component.tscn" id="5_i8tdv"]
 [ext_resource type="PackedScene" uid="uid://dp6vit1pkxvs2" path="res://Scenes/Tree.tscn" id="5_tyi3d"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="6_exm8g"]
 [ext_resource type="Texture2D" uid="uid://b7n6hkvadbv47" path="res://Assets/Grave.png" id="7_nw6he"]
 [ext_resource type="Texture2D" uid="uid://ccv44ilecbocj" path="res://Assets/GrassBase.png" id="10_y8g7y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r1oc"]
+size = Vector2(46, 45)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8tdv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nw6he"]
 texture = ExtResource("4_gexnf")
@@ -236,11 +242,32 @@ y_sort_enabled = true
 position = Vector2(539, 511)
 
 [node name="SpecialTree" type="Node2D" parent="YSort"]
+visible = false
 position = Vector2(536, 194)
 
 [node name="Sprite2D" type="Sprite2D" parent="YSort/SpecialTree"]
-visible = false
 texture = ExtResource("4_hc1hc")
+
+[node name="SignpostComponent" parent="YSort/SpecialTree" instance=ExtResource("5_i8tdv")]
+text = "
+Siouxsie
+RIP
+\"To the best friend a witch could have\"
+1413 - 1436"
+centered = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SpecialTree/SignpostComponent"]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_6r1oc")
+disabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/SpecialTree"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SpecialTree/StaticBody2D"]
+position = Vector2(1, 9)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_i8tdv")
+disabled = true
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_q5rn2")]
 player = NodePath("../YSort/Player")

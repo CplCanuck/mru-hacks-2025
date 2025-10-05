@@ -6,7 +6,9 @@ extends Node2D
 @onready var level_2_broken: Sprite2D = $Background/Graves/Level2Grave/Broken
 @onready var level_2_gravestone: Gravestone = $Background/Graves/Level2Grave/Gravestone
 
-@onready var special_tree: Sprite2D = $YSort/SpecialTree/Sprite2D
+@onready var special_tree: Node2D = $YSort/SpecialTree
+@onready var special_tree_collision: CollisionShape2D = $YSort/SpecialTree/StaticBody2D/CollisionShape2D
+@onready var Special_tree_sign_collision: CollisionShape2D = $YSort/SpecialTree/SignpostComponent/CollisionShape2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,3 +36,5 @@ func _ready():
         
         # Enable Special Tree
         special_tree.visible = true
+        special_tree_collision.disabled = false
+        Special_tree_sign_collision.disabled = false
