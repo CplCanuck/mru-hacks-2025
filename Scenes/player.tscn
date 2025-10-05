@@ -544,8 +544,6 @@ size = Vector2(120, 120)
 script = ExtResource("1_cvnsp")
 
 [node name="staff" parent="." instance=ExtResource("4_vgqql")]
-speed = null
-cooldown = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_onrkg")

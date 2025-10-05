@@ -109,7 +109,7 @@ func _input(event: InputEvent) -> void:
 
 #
 #func _on_attack_timer_timeout() -> void:
-	#end_attack()
+	#end_attack()a
 
 
 func _on_dash_timer_timeout() -> void:
