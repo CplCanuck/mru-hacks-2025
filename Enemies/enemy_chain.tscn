@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://m50tlqmjxlga"]
+[gd_scene load_steps=23 format=3 uid="uid://m50tlqmjxlga"]
 
 [ext_resource type="Script" uid="uid://cmhqosuiq1pka" path="res://Enemies/enemy_chain.gd" id="1_w1ygi"]
 [ext_resource type="Texture2D" uid="uid://c1n6nbj1pia7l" path="res://Assets/sparkle.png" id="2_8sphn"]
@@ -82,14 +82,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdn3"]
 size = Vector2(6, 5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti5ly"]
+size = Vector2(6, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p13a3"]
+size = Vector2(6, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp6s2"]
+size = Vector2(6, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgluo"]
+size = Vector2(6, 5)
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mnogq"]
 resource_local_to_scene = true
 b = Vector2(0, 0)
 
 [node name="EnemyChain" type="Node2D"]
 script = ExtResource("1_w1ygi")
-enemy_max_range = null
-chain_length = null
 item = 2
 
 [node name="Twinkle" type="AnimatedSprite2D" parent="."]
@@ -304,10 +314,6 @@ position = Vector2(0, 46)
 node_a = NodePath("../chainlink8")
 node_b = NodePath("../chainlink9")
 
-[node name="PinJoint2D10" type="PinJoint2D" parent="chain"]
-position = Vector2(2.842171e-14, 46)
-node_a = NodePath("../chainlink9")
-
 [node name="chainlink9" type="RigidBody2D" parent="chain"]
 modulate = Color(0.1764706, 1, 0.8627451, 0.41960785)
 position = Vector2(0, 50)
@@ -324,6 +330,82 @@ texture = ExtResource("4_ti5ly")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chain/chainlink9"]
 position = Vector2(2.1855694e-08, 0)
 shape = SubResource("RectangleShape2D_uvdn3")
+
+[node name="PinJoint2D10" type="PinJoint2D" parent="chain"]
+position = Vector2(0, 54)
+node_a = NodePath("../chainlink9")
+node_b = NodePath("../chainlink10")
+
+[node name="chainlink10" type="RigidBody2D" parent="chain"]
+position = Vector2(0, 56)
+rotation = -1.5707964
+gravity_scale = 0.0
+inertia = 5.0
+linear_damp = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="chain/chainlink10"]
+texture = ExtResource("4_ti5ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chain/chainlink10"]
+shape = SubResource("RectangleShape2D_ti5ly")
+
+[node name="PinJoint2D11" type="PinJoint2D" parent="chain"]
+position = Vector2(0, 60)
+node_a = NodePath("../chainlink10")
+node_b = NodePath("../chainlink11")
+
+[node name="chainlink11" type="RigidBody2D" parent="chain"]
+position = Vector2(0, 62)
+rotation = -1.5707964
+gravity_scale = 0.0
+inertia = 5.0
+linear_damp = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="chain/chainlink11"]
+texture = ExtResource("4_ti5ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chain/chainlink11"]
+shape = SubResource("RectangleShape2D_p13a3")
+
+[node name="PinJoint2D12" type="PinJoint2D" parent="chain"]
+position = Vector2(0, 66)
+node_a = NodePath("../chainlink11")
+node_b = NodePath("../chainlink12")
+
+[node name="chainlink12" type="RigidBody2D" parent="chain"]
+position = Vector2(0, 68)
+rotation = -1.5707964
+gravity_scale = 0.0
+inertia = 5.0
+linear_damp = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="chain/chainlink12"]
+texture = ExtResource("4_ti5ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chain/chainlink12"]
+shape = SubResource("RectangleShape2D_xp6s2")
+
+[node name="PinJoint2D13" type="PinJoint2D" parent="chain"]
+position = Vector2(0, 72)
+node_a = NodePath("../chainlink12")
+node_b = NodePath("../chainlink13")
+
+[node name="chainlink13" type="RigidBody2D" parent="chain"]
+position = Vector2(0, 76)
+rotation = -1.5707964
+gravity_scale = 0.0
+inertia = 5.0
+linear_damp = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="chain/chainlink13"]
+texture = ExtResource("4_ti5ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chain/chainlink13"]
+shape = SubResource("RectangleShape2D_lgluo")
+
+[node name="PinJoint2D14" type="PinJoint2D" parent="chain"]
+position = Vector2(0, 78)
+node_a = NodePath("../chainlink13")
 
 [node name="ChainEnemyConnection" type="Area2D" parent="."]
 collision_layer = 536870912

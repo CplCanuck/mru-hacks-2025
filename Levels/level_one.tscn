@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="4_om7uc"]
 [ext_resource type="PackedScene" uid="uid://bnhyfa1xv47dk" path="res://Enemies/Ghost.tscn" id="5_cph7v"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="7_whtlt"]
-[ext_resource type="PackedScene" path="res://NPCs/kidnpc.tscn" id="8_2848f"]
+[ext_resource type="PackedScene" uid="uid://vv7smke2nv0n" path="res://NPCs/kidnpc.tscn" id="8_2848f"]
 [ext_resource type="PackedScene" uid="uid://dp6vit1pkxvs2" path="res://Scenes/Tree.tscn" id="8_whtlt"]
 
 [node name="LevelOne" type="Node2D"]
