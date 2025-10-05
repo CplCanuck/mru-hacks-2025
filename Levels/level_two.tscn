@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ccv44ilecbocj" path="res://Assets/GrassBase.png" id="4_kiou0"]
 [ext_resource type="PackedScene" uid="uid://bnhyfa1xv47dk" path="res://Enemies/Ghost.tscn" id="5_knhb2"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="7_n7577"]
-[ext_resource type="PackedScene" path="res://NPCs/senior_npc_tp.tscn" id="8_fw6be"]
-[ext_resource type="PackedScene" uid="uid://dp6vit1pkxvs2" path="res://Scenes/Tree.tscn" id="8_n7577"]
+[ext_resource type="PackedScene" uid="uid://csfximkpnymc4" path="res://NPCs/senior_npc_tp.tscn" id="8_fw6be"]
+[ext_resource type="PackedScene" path="res://Scenes/Tree.tscn" id="8_n7577"]
 
 [node name="LevelTwo" type="Node2D"]
 
@@ -382,9 +382,11 @@ y_sort_enabled = true
 
 [node name="Ghost2" parent="YSort/Enemies" instance=ExtResource("5_knhb2")]
 position = Vector2(220, 266)
+item = 1
 
 [node name="Ghost3" parent="YSort/Enemies" instance=ExtResource("5_knhb2")]
 position = Vector2(583, 214)
+item = 2
 
 [node name="Ghost" parent="YSort/Enemies" instance=ExtResource("5_knhb2")]
 position = Vector2(551, 397)
@@ -520,5 +522,4 @@ texture = ExtResource("4_kiou0")
 
 [node name="SeniorNPC_TP" parent="." instance=ExtResource("8_fw6be")]
 position = Vector2(435, 213)
-level = 2
 text = ""

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnhyfa1xv47dk"]
+[gd_scene load_steps=6 format=3 uid="uid://bnhyfa1xv47dk"]
 
 [ext_resource type="PackedScene" uid="uid://m50tlqmjxlga" path="res://Enemies/enemy_chain.tscn" id="1_7sqyf"]
+[ext_resource type="Script" uid="uid://qdhnwtlbgety" path="res://Enemies/ghost.gd" id="1_gfikl"]
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="2_gfikl"]
 
 [sub_resource type="Gradient" id="Gradient_7sqyf"]
@@ -13,6 +14,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Ghost" type="Node2D"]
+script = ExtResource("1_gfikl")
 
 [node name="EnemyChain" parent="." node_paths=PackedStringArray("enemy") instance=ExtResource("1_7sqyf")]
 enemy = NodePath("BaseEnemy")
