@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://c2s6c6nxu5xxs"]
+[gd_scene load_steps=15 format=4 uid="uid://c2s6c6nxu5xxs"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_b3cm0"]
 [ext_resource type="Script" uid="uid://dqbxnj20of356" path="res://Levels/level_graveyard.gd" id="1_tyi3d"]
 [ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="2_q5rn2"]
 [ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="3_q5rn2"]
 [ext_resource type="Texture2D" uid="uid://cik2s8gcwr0h4" path="res://Assets/rubble.png" id="4_gexnf"]
+[ext_resource type="Texture2D" uid="uid://byd0su3fohdb8" path="res://Assets/specialTree.png" id="4_hc1hc"]
 [ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="4_w6vlc"]
 [ext_resource type="Texture2D" uid="uid://ddfjoybjtqicn" path="res://Assets/BrokenGrave.png" id="5_exm8g"]
 [ext_resource type="PackedScene" uid="uid://dp6vit1pkxvs2" path="res://Scenes/Tree.tscn" id="5_tyi3d"]
@@ -233,6 +234,13 @@ position = Vector2(277, 579)
 [node name="Player" parent="YSort" instance=ExtResource("1_b3cm0")]
 y_sort_enabled = true
 position = Vector2(539, 511)
+
+[node name="SpecialTree" type="Node2D" parent="YSort"]
+position = Vector2(536, 194)
+
+[node name="Sprite2D" type="Sprite2D" parent="YSort/SpecialTree"]
+visible = false
+texture = ExtResource("4_hc1hc")
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_q5rn2")]
 player = NodePath("../YSort/Player")

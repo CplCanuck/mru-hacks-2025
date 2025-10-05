@@ -6,6 +6,8 @@ extends Node2D
 @onready var level_2_broken: Sprite2D = $Background/Graves/Level2Grave/Broken
 @onready var level_2_gravestone: Gravestone = $Background/Graves/Level2Grave/Gravestone
 
+@onready var special_tree: Sprite2D = $YSort/SpecialTree/Sprite2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,3 +25,12 @@ func _ready():
         level_2_broken.visible = false
         level_2_gravestone.visible = true
         level_2_gravestone.get_child(0).monitorable = true
+        
+    elif GameManager.Graves_saved == 2:
+        # Disable graves
+        level_1_gravestone.get_child(0).monitorable = false
+        level_2_gravestone.get_child(0).monitorable = false
+        level_2_gravestone.visible = true
+        
+        # Enable Special Tree
+        special_tree.visible = true
