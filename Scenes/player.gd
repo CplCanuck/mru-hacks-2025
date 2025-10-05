@@ -7,6 +7,7 @@ const DASH_LENGTH = 100
 
 var attacking := false
 var dashing := false
+var last_direction := Vector2.RIGHT
 
 @onready var interaction_range: Area2D = $InteractionRange
 
@@ -15,6 +16,7 @@ func _physics_process(_delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("left", "right", "up", "down").normalized()
 	if direction:
+		last_direction = direction
 		velocity = direction * SPEED
 
 		# move interaction range node
@@ -46,7 +48,7 @@ func _physics_process(_delta: float) -> void:
 
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('ui_select'):
+	if event.is_action_pressed('interact'):
 		for object in interaction_range.get_overlapping_areas():
 			if object.has_method("interact"):
 				object.interact()

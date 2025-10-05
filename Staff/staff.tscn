@@ -65,9 +65,9 @@ rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
 gravity_scale = 0.0
-inertia = 50.0
+inertia = 80.0
 linear_damp_mode = 1
-linear_damp = 100.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink"]
 texture = ExtResource("3_uglyn")
@@ -85,8 +85,8 @@ position = Vector2(23, 6)
 rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink2"]
 texture = ExtResource("2_uglyn")
@@ -105,8 +105,8 @@ rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
 mass = 2.0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink3"]
 texture = ExtResource("3_uglyn")
@@ -126,8 +126,8 @@ rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
 mass = 2.0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink4"]
 texture = ExtResource("2_uglyn")
@@ -148,8 +148,8 @@ collision_layer = 64
 collision_mask = 0
 mass = 2.0
 gravity_scale = 0.0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink5"]
 texture = ExtResource("3_uglyn")
@@ -169,8 +169,8 @@ rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
 gravity_scale = 0.0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink6"]
 texture = ExtResource("2_uglyn")
@@ -190,8 +190,8 @@ rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
 gravity_scale = 0.0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink7"]
 texture = ExtResource("3_uglyn")
@@ -211,8 +211,8 @@ rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
 gravity_scale = 0.0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink8"]
 texture = ExtResource("2_uglyn")
@@ -232,8 +232,8 @@ rotation = -1.5707964
 collision_layer = 64
 collision_mask = 0
 gravity_scale = 0.0
-inertia = 5.0
-linear_damp = 5.0
+inertia = 80.0
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="chainlink9"]
 texture = ExtResource("3_uglyn")
@@ -271,3 +271,7 @@ collision_layer = 0
 position = Vector2(23, -6)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_n7866")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
