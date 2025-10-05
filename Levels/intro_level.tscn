@@ -1,3 +1,11 @@
-[gd_scene load_steps=0 format=3 uid="uid://c2t3i18yhignk"]
+[gd_scene load_steps=3 format=3 uid="uid://c2t3i18yhignk"]
+
+[ext_resource type="PackedScene" uid="uid://b0g05sv23vr6u" path="res://Scenes/player.tscn" id="1_isgbt"]
+[ext_resource type="PackedScene" path="res://Scenes/camera.tscn" id="2_dxy3b"]
 
 [node name="IntroLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_isgbt")]
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_dxy3b")]
+player = NodePath("../Player")
