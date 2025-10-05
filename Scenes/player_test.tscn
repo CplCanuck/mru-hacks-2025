@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://x1tc55goikvx"]
+[gd_scene load_steps=9 format=3 uid="uid://x1tc55goikvx"]
 
 [ext_resource type="PackedScene" uid="uid://b0g05sv23vr6u" path="res://Scenes/player.tscn" id="1_xjjte"]
 [ext_resource type="PackedScene" uid="uid://byjmdu6hnqlpd" path="res://Elements/Gravestone.tscn" id="2_acvas"]
 [ext_resource type="PackedScene" uid="uid://bm3btevr6lisi" path="res://UI/DialogueBox.tscn" id="3_pm723"]
 [ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="4_70u62"]
 [ext_resource type="PackedScene" uid="uid://m50tlqmjxlga" path="res://Enemies/enemy_chain.tscn" id="4_yi8xp"]
-[ext_resource type="PackedScene" uid="uid://dl0e6kx6bsosa" path="res://Scenes/camera.tscn" id="6_wix4t"]
+[ext_resource type="PackedScene" path="res://Scenes/camera.tscn" id="6_wix4t"]
+[ext_resource type="PackedScene" uid="uid://8e65iqwnyfbm" path="res://Scenes/GrassTileset.tscn" id="7_5n1oj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_70u62"]
 vertices = PackedVector2Array(1152.2734, 8.96875, 1170.7031, 651.8672, 9.9609375, 638.1094, 8.03125, 6.0234375)
@@ -37,3 +38,6 @@ position = Vector2(993, 499)
 
 [node name="BaseEnemy" parent="EnemyChain" instance=ExtResource("4_70u62")]
 scale = Vector2(0.56, 0.56)
+
+[node name="GrassTilemap" parent="." instance=ExtResource("7_5n1oj")]
+position = Vector2(304.24847, 262.62952)
