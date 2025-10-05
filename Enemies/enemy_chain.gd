@@ -20,6 +20,7 @@ Should be the parent.
 func _ready() -> void:
 	for child in get_children():
 		if child is Enemy :
+			$PinJoint2D10.set_node_b(child.get_path())
 			pass
 			#child.post_position = global_position
 	pass 
