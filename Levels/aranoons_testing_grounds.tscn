@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7kvgftho0f2a"]
+[gd_scene load_steps=4 format=3 uid="uid://b7kvgftho0f2a"]
 
 [ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_b73jx"]
+[ext_resource type="PackedScene" uid="uid://m50tlqmjxlga" path="res://Enemies/enemy_chain.tscn" id="2_g5725"]
+[ext_resource type="PackedScene" uid="uid://y5lm63ohq5yv" path="res://Enemies/base_enemy.tscn" id="3_pud8w"]
 
 [node name="aranoons testing grounds" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_b73jx")]
 position = Vector2(124, 74)
+
+[node name="EnemyChain" parent="." instance=ExtResource("2_g5725")]
+position = Vector2(472, 251)
+
+[node name="BaseEnemy" parent="EnemyChain" instance=ExtResource("3_pud8w")]
