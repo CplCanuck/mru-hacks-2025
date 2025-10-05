@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7kvgftho0f2a"]
 
-[ext_resource type="PackedScene" uid="uid://d00acyros1td2" path="res://Staff/staff.tscn" id="1_b73jx"]
+[ext_resource type="PackedScene" uid="uid://cs76p0dh2b4l" path="res://Scenes/player.tscn" id="1_b73jx"]
 
 [node name="aranoons testing grounds" type="Node2D"]
 
-[node name="staff" parent="." instance=ExtResource("1_b73jx")]
-position = Vector2(38, 46)
-rotation = -0.1607902
+[node name="Player" parent="." instance=ExtResource("1_b73jx")]
+position = Vector2(124, 74)

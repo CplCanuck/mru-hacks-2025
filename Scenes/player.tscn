@@ -542,4 +542,10 @@ shape = SubResource("RectangleShape2D_6t5aa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fs7ks")
 animation = &"idle"
-frame_progress = 0.8744301
+frame_progress = 0.055277098
+
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(61, 0)
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D/Marker2D"]
+position = Vector2(-61, 0)
